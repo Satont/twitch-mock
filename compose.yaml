@@ -1,0 +1,17 @@
+services:
+  twitch-mock:
+    build: .
+    ports:
+      - '3333:3333'
+      - '7777:7777'
+      - '8081:8081'
+    environment:
+      SITE_BASE_URL: ${SITE_BASE_URL:-http://localhost:3005}
+      STORAGE: ${STORAGE:-memory}
+      SQLITE_PATH: /data/twitch-mock.sqlite
+    volumes:
+      - twitch-mock-data:/data
+    restart: unless-stopped
+
+volumes:
+  twitch-mock-data:

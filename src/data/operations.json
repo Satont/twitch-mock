@@ -1,0 +1,4232 @@
+{
+	"generatedFrom": "https://dev.twitch.tv/docs/api/reference/",
+	"operations": [
+		{
+			"slug": "get-extension-analytics",
+			"name": "Get Extension Analytics",
+			"resource": "Analytics",
+			"method": "GET",
+			"path": "/helix/analytics/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"extension_id": "efgh",
+						"URL": "https://twitch-piper-reports.s3-us-west-2.amazonaws.com/dynamic/LoL%20ADC...",
+						"type": "overview_v2",
+						"date_range": {
+							"started_at": "2018-03-01T00:00:00Z",
+							"ended_at": "2018-06-01T00:00:00Z"
+						}
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-game-analytics",
+			"name": "Get Game Analytics",
+			"resource": "Analytics",
+			"method": "GET",
+			"path": "/helix/analytics/games",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"game_id": "493057",
+						"URL": "https://twitch-piper-reports.s3-us-west-2.amazonaws.com/games/66170/overview/15183...",
+						"type": "overview_v2",
+						"date_range": {
+							"started_at": "2018-01-01T00:00:00Z",
+							"ended_at": "2018-03-01T00:00:00Z"
+						}
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-authorization-by-user",
+			"name": "Get Authorization By User",
+			"resource": "Users",
+			"method": "GET",
+			"path": "/helix/authorization/users",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"scopes": [
+							"bits:read",
+							"channel:bot",
+							"channel:manage:predictions"
+						],
+						"has_authorized": true
+					},
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"scopes": [],
+						"has_authorized": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-cheermotes",
+			"name": "Get Cheermotes",
+			"resource": "Bits",
+			"method": "GET",
+			"path": "/helix/bits/cheermotes",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"prefix": "Cheer",
+						"tiers": [
+							{
+								"min_bits": 1,
+								"id": "1",
+								"color": "#979797",
+								"images": {
+									"dark": {
+										"animated": {
+											"1": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/animated/1/1.gif",
+											"2": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/animated/1/2.gif",
+											"3": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/animated/1/3.gif",
+											"4": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/animated/1/4.gif",
+											"1.5": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/animated/1/1.5.gif"
+										},
+										"static": {
+											"1": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/static/1/1.png",
+											"2": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/static/1/2.png",
+											"3": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/static/1/3.png",
+											"4": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/static/1/4.png",
+											"1.5": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/dark/static/1/1.5.png"
+										}
+									},
+									"light": {
+										"animated": {
+											"1": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/1.gif",
+											"2": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/2.gif",
+											"3": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/3.gif",
+											"4": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/4.gif",
+											"1.5": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/1.5.gif"
+										},
+										"static": {
+											"1": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/static/1/1.png",
+											"2": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/static/1/2.png",
+											"3": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/static/1/3.png",
+											"4": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/static/1/4.png",
+											"1.5": "https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/static/1/1.5.png"
+										}
+									}
+								},
+								"can_cheer": true,
+								"show_in_bits_card": true
+							}
+						],
+						"type": "global_first_party",
+						"order": 1,
+						"last_updated": "2018-05-22T00:06:04Z",
+						"is_charitable": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-custom-power-up",
+			"name": "Get Custom Power-up",
+			"resource": "Bits",
+			"method": "GET",
+			"path": "/helix/bits/custom_power_ups",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "92af127c-7326-4483-a52b-b0da0be61c02",
+						"image": null,
+						"background_color": "#00FF00",
+						"is_enabled": true,
+						"bits": 100,
+						"title": "game analysis",
+						"prompt": "",
+						"is_user_input_required": false,
+						"max_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_stream": 0
+						},
+						"max_per_user_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_user_per_stream": 0
+						},
+						"global_cooldown_setting": {
+							"is_enabled": false,
+							"global_cooldown_seconds": 0
+						},
+						"is_paused": false,
+						"is_in_stock": true,
+						"default_image": {
+							"url_1x": "https://static-cdn.jtvnw.net/twilight-static-assets/Default-Power-up-Line-Lightshade-28x28.png",
+							"url_2x": "https://static-cdn.jtvnw.net/twilight-static-assets/Default-Power-up-Line-Lightshade-56x56.png",
+							"url_4x": "https://static-cdn.jtvnw.net/twilight-static-assets/Default-Power-up-Line-Lightshade-112x112.png"
+						},
+						"redemptions_redeemed_current_stream": null,
+						"cooldown_expires_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extension-bits-products",
+			"name": "Get Extension Bits Products",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/bits/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"sku": "1010",
+						"cost": {
+							"amount": 990,
+							"type": "bits"
+						},
+						"in_development": true,
+						"display_name": "Rusty Crate 2",
+						"expiration": "2021-05-18T09:10:13.397Z",
+						"is_broadcast": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-extension-bits-product",
+			"name": "Update Extension Bits Product",
+			"resource": "Extensions",
+			"method": "PUT",
+			"path": "/helix/bits/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"sku": "1010",
+						"cost": {
+							"amount": 990,
+							"type": "bits"
+						},
+						"in_development": true,
+						"display_name": "Rusty Crate 2",
+						"expiration": "2021-05-18T09:10:13.397Z",
+						"is_broadcast": true
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-bits-leaderboard",
+			"name": "Get Bits Leaderboard",
+			"resource": "Bits",
+			"method": "GET",
+			"path": "/helix/bits/leaderboard",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"rank": 1,
+						"score": 12543
+					},
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"rank": 2,
+						"score": 6900
+					}
+				],
+				"date_range": {
+					"started_at": "2018-02-05T08:00:00Z",
+					"ended_at": "2018-02-12T08:00:00Z"
+				},
+				"total": 2
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-custom-reward",
+			"name": "Delete Custom Reward",
+			"resource": "Channel Points",
+			"method": "DELETE",
+			"path": "/helix/channel_points/custom_rewards",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-custom-reward",
+			"name": "Get Custom Reward",
+			"resource": "Channel Points",
+			"method": "GET",
+			"path": "/helix/channel_points/custom_rewards",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+						"image": null,
+						"background_color": "#00E5CB",
+						"is_enabled": true,
+						"cost": 50000,
+						"title": "game analysis",
+						"prompt": "",
+						"is_user_input_required": false,
+						"max_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_stream": 0
+						},
+						"max_per_user_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_user_per_stream": 0
+						},
+						"global_cooldown_setting": {
+							"is_enabled": false,
+							"global_cooldown_seconds": 0
+						},
+						"is_paused": false,
+						"is_in_stock": true,
+						"default_image": {
+							"url_1x": "https://static-cdn.jtvnw.net/custom-reward-images/default-1.png",
+							"url_2x": "https://static-cdn.jtvnw.net/custom-reward-images/default-2.png",
+							"url_4x": "https://static-cdn.jtvnw.net/custom-reward-images/default-4.png"
+						},
+						"should_redemptions_skip_request_queue": false,
+						"redemptions_redeemed_current_stream": null,
+						"cooldown_expires_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-custom-reward",
+			"name": "Update Custom Reward",
+			"resource": "Channel Points",
+			"method": "PATCH",
+			"path": "/helix/channel_points/custom_rewards",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+						"image": null,
+						"background_color": "#00E5CB",
+						"is_enabled": false,
+						"cost": 30000,
+						"title": "game analysis 2v2",
+						"prompt": "",
+						"is_user_input_required": false,
+						"max_per_stream_setting": {
+							"is_enabled": true,
+							"max_per_stream": 60
+						},
+						"max_per_user_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_user_per_stream": 0
+						},
+						"global_cooldown_setting": {
+							"is_enabled": false,
+							"global_cooldown_seconds": 0
+						},
+						"is_paused": false,
+						"is_in_stock": false,
+						"default_image": {
+							"url_1x": "https://static-cdn.jtvnw.net/custom-reward-images/default-1.png",
+							"url_2x": "https://static-cdn.jtvnw.net/custom-reward-images/default-2.png",
+							"url_4x": "https://static-cdn.jtvnw.net/custom-reward-images/default-4.png"
+						},
+						"should_redemptions_skip_request_queue": true,
+						"redemptions_redeemed_current_stream": 60,
+						"cooldown_expires_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-custom-rewards",
+			"name": "Create Custom Rewards",
+			"resource": "Channel Points",
+			"method": "POST",
+			"path": "/helix/channel_points/custom_rewards",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "afaa7e34-6b17-49f0-a19a-d1e76eaaf673",
+						"image": null,
+						"background_color": "#00E5CB",
+						"is_enabled": true,
+						"cost": 50000,
+						"title": "game analysis 1v1",
+						"prompt": "",
+						"is_user_input_required": false,
+						"max_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_stream": 0
+						},
+						"max_per_user_per_stream_setting": {
+							"is_enabled": false,
+							"max_per_user_per_stream": 0
+						},
+						"global_cooldown_setting": {
+							"is_enabled": false,
+							"global_cooldown_seconds": 0
+						},
+						"is_paused": false,
+						"is_in_stock": true,
+						"default_image": {
+							"url_1x": "https://static-cdn.jtvnw.net/custom-reward-images/default-1.png",
+							"url_2x": "https://static-cdn.jtvnw.net/custom-reward-images/default-2.png",
+							"url_4x": "https://static-cdn.jtvnw.net/custom-reward-images/default-4.png"
+						},
+						"should_redemptions_skip_request_queue": false,
+						"redemptions_redeemed_current_stream": null,
+						"cooldown_expires_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-custom-reward-redemption",
+			"name": "Get Custom Reward Redemption",
+			"resource": "Channel Points",
+			"method": "GET",
+			"path": "/helix/channel_points/custom_rewards/redemptions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+						"user_login": "viewer",
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_input": "",
+						"status": "CANCELED",
+						"redeemed_at": "2020-07-01T18:37:32Z",
+						"reward": {
+							"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+							"title": "game analysis",
+							"prompt": "",
+							"cost": 50000
+						}
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN1cnNvciI6Ik1UZG1ZVEprWmpFdFlXUTNOaTAwT0RBMExXSm1ZVFV0WVRRd1pXWTJNMlZtWlRZelgxOHlNREl3TFRBM0xUQXhWREU0T2pNM09qTXlMakl6TXpFeU56RTFOMW89In19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-redemption-status",
+			"name": "Update Redemption Status",
+			"resource": "Channel Points",
+			"method": "PATCH",
+			"path": "/helix/channel_points/custom_rewards/redemptions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"user_input": "",
+						"status": "CANCELED",
+						"redeemed_at": "2020-07-01T18:37:32Z",
+						"reward": {
+							"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+							"title": "game analysis",
+							"prompt": "",
+							"cost": 50000
+						}
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-information",
+			"name": "Get Channel Information",
+			"resource": "Channels",
+			"method": "GET",
+			"path": "/helix/channels",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_language": "en",
+						"game_id": "509670",
+						"game_name": "Science & Technology",
+						"title": "TwitchDev Monthly Update // May 6, 2021",
+						"delay": 0,
+						"tags": [
+							"DevsInTheKnow"
+						],
+						"content_classification_labels": [
+							"Gambling",
+							"DrugsIntoxication",
+							"MatureGame"
+						],
+						"is_branded_content": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "modify-channel-information",
+			"name": "Modify Channel Information",
+			"resource": "Channels",
+			"method": "PATCH",
+			"path": "/helix/channels",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-ad-schedule",
+			"name": "Get Ad Schedule",
+			"resource": "Ads",
+			"method": "GET",
+			"path": "/helix/channels/ads",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"next_ad_at": "2023-08-01T23:08:18+00:00",
+						"last_ad_at": "2023-08-01T23:08:18+00:00",
+						"duration": "60",
+						"preroll_free_time": "90",
+						"snooze_count": "1",
+						"snooze_refresh_at": "2023-08-01T23:08:18+00:00"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "snooze-next-ad",
+			"name": "Snooze Next Ad",
+			"resource": "Ads",
+			"method": "POST",
+			"path": "/helix/channels/ads/schedule/snooze",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"snooze_count": "1",
+						"snooze_refresh_at": "2023-08-01T23:08:18+00:00",
+						"next_ad_at": "2023-08-01T23:08:18+00:00"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "start-commercial",
+			"name": "Start Commercial",
+			"resource": "Ads",
+			"method": "POST",
+			"path": "/helix/channels/commercial",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"length": 60,
+						"message": "",
+						"retry_after": 480
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-editors",
+			"name": "Get Channel Editors",
+			"resource": "Channels",
+			"method": "GET",
+			"path": "/helix/channels/editors",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"created_at": "2019-02-15T21:19:50.380833Z"
+					},
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"created_at": "2018-03-07T16:28:29.872937Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-followed-channels",
+			"name": "Get Followed Channels",
+			"resource": "Channels",
+			"method": "GET",
+			"path": "/helix/channels/followed",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"total": 8,
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer",
+						"followed_at": "2022-05-24T22:22:08Z"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-followers",
+			"name": "Get Channel Followers",
+			"resource": "Channels",
+			"method": "GET",
+			"path": "/helix/channels/followers",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"total": 8,
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"followed_at": "2022-05-24T22:22:08Z"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "remove-channel-vip",
+			"name": "Remove Channel VIP",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/channels/vips",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-vips",
+			"name": "Get VIPs",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/channels/vips",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "add-channel-vip",
+			"name": "Add Channel VIP",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/channels/vips",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-charity-campaign",
+			"name": "Get Charity Campaign",
+			"resource": "Charity",
+			"method": "GET",
+			"path": "/helix/charity/campaigns",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "123-abc-456-def",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"charity_name": "Example name",
+						"charity_description": "Example description",
+						"charity_logo": "https://abc.cloudfront.net/ppgf/1000/100.png",
+						"charity_website": "https://www.example.com",
+						"current_amount": {
+							"value": 86000,
+							"decimal_places": 2,
+							"currency": "USD"
+						},
+						"target_amount": {
+							"value": 1500000,
+							"decimal_places": 2,
+							"currency": "USD"
+						}
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-charity-campaign-donations",
+			"name": "Get Charity Campaign Donations",
+			"resource": "Charity",
+			"method": "GET",
+			"path": "/helix/charity/donations",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "send-chat-announcement",
+			"name": "Send Chat Announcement",
+			"resource": "Chat",
+			"method": "POST",
+			"path": "/helix/chat/announcements",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-chat-badges",
+			"name": "Get Channel Chat Badges",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/badges",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-global-chat-badges",
+			"name": "Get Global Chat Badges",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/badges/global",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"set_id": "vip",
+						"versions": [
+							{
+								"id": "1",
+								"image_url_1x": "https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/1",
+								"image_url_2x": "https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/2",
+								"image_url_4x": "https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/3",
+								"title": "VIP",
+								"description": "VIP",
+								"click_action": "visit_url",
+								"click_url": "https://help.twitch.tv/customer/en/portal/articles/659115-twitch-chat-badges-guide"
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-chatters",
+			"name": "Get Chatters",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/chatters",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				},
+				"total": 8
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-user-chat-color",
+			"name": "Get User Chat Color",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/color",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"color": "#9146FF"
+					},
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"color": ""
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-user-chat-color",
+			"name": "Update User Chat Color",
+			"resource": "Chat",
+			"method": "PUT",
+			"path": "/helix/chat/color",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-emotes",
+			"name": "Get Channel Emotes",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/emotes",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "304456832",
+						"name": "twitchdevPitchfork",
+						"images": {
+							"url_1x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/1.0",
+							"url_2x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/2.0",
+							"url_4x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/3.0"
+						},
+						"tier": "1000",
+						"emote_type": "subscriptions",
+						"emote_set_id": "301590448",
+						"format": [
+							"static"
+						],
+						"scale": [
+							"1.0",
+							"2.0",
+							"3.0"
+						],
+						"theme_mode": [
+							"light",
+							"dark"
+						]
+					},
+					{
+						"id": "emotesv2_4c3b4ed516de493bbcd2df2f5d450f49",
+						"name": "twitchdevHyperPitchfork",
+						"images": {
+							"url_1x": "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_4c3b4ed516de493bbcd2df2f5d450f49/static/light/1.0",
+							"url_2x": "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_4c3b4ed516de493bbcd2df2f5d450f49/static/light/2.0",
+							"url_4x": "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_4c3b4ed516de493bbcd2df2f5d450f49/static/light/3.0"
+						},
+						"tier": "1000",
+						"emote_type": "subscriptions",
+						"emote_set_id": "318939165",
+						"format": [
+							"static",
+							"animated"
+						],
+						"scale": [
+							"1.0",
+							"2.0",
+							"3.0"
+						],
+						"theme_mode": [
+							"light",
+							"dark"
+						]
+					}
+				],
+				"template": "https://static-cdn.jtvnw.net/emoticons/v2/{{id}}/{{format}}/{{theme_mode}}/{{scale}}"
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-global-emotes",
+			"name": "Get Global Emotes",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/emotes/global",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "196892",
+						"name": "TwitchUnity",
+						"images": {
+							"url_1x": "https://static-cdn.jtvnw.net/emoticons/v2/196892/static/light/1.0",
+							"url_2x": "https://static-cdn.jtvnw.net/emoticons/v2/196892/static/light/2.0",
+							"url_4x": "https://static-cdn.jtvnw.net/emoticons/v2/196892/static/light/3.0"
+						},
+						"format": [
+							"static"
+						],
+						"scale": [
+							"1.0",
+							"2.0",
+							"3.0"
+						],
+						"theme_mode": [
+							"light",
+							"dark"
+						]
+					}
+				],
+				"template": "https://static-cdn.jtvnw.net/emoticons/v2/{{id}}/{{format}}/{{theme_mode}}/{{scale}}"
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-emote-sets",
+			"name": "Get Emote Sets",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/emotes/set",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "304456832",
+						"name": "twitchdevPitchfork",
+						"images": {
+							"url_1x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/1.0",
+							"url_2x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/2.0",
+							"url_4x": "https://static-cdn.jtvnw.net/emoticons/v2/304456832/static/light/3.0"
+						},
+						"emote_type": "subscriptions",
+						"emote_set_id": "301590448",
+						"owner_id": "141981764",
+						"format": [
+							"static"
+						],
+						"scale": [
+							"1.0",
+							"2.0",
+							"3.0"
+						],
+						"theme_mode": [
+							"light",
+							"dark"
+						]
+					}
+				],
+				"template": "https://static-cdn.jtvnw.net/emoticons/v2/{{id}}/{{format}}/{{theme_mode}}/{{scale}}"
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-user-emotes",
+			"name": "Get User Emotes",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/emotes/user",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"emote_set_id": "",
+						"emote_type": "hypetrain",
+						"format": [
+							"static"
+						],
+						"id": "304420818",
+						"name": "HypeLol",
+						"owner_id": "477339272",
+						"scale": [
+							"1.0",
+							"2.0",
+							"3.0"
+						],
+						"theme_mode": [
+							"light",
+							"dark"
+						]
+					}
+				],
+				"template": "https://static-cdn.jtvnw.net/emoticons/v2/{{id}}/{{format}}/{{theme_mode}}/{{scale}}",
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLJxhIjoiIn0gf5"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-chat-message",
+			"name": "Send Chat Message",
+			"resource": "Chat",
+			"method": "POST",
+			"path": "/helix/chat/messages",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"message_id": "abc-123-def",
+						"is_sent": true
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "unpin-chat-message",
+			"name": "Unpin Chat Message",
+			"resource": "Chat",
+			"method": "DELETE",
+			"path": "/helix/chat/pins",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-pinned-chat-message",
+			"name": "Get Pinned Chat Message",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/pins",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"message_id": "abc-def-123-456",
+						"broadcaster_id": "12345",
+						"sender_user_id": "99999",
+						"sender_user_login": "viewer",
+						"sender_user_name": "Viewer",
+						"pinned_by_user_id": "99999",
+						"pinned_by_user_login": "viewer",
+						"pinned_by_user_name": "Viewer",
+						"message": {
+							"text": "Welcome! bleedPurple Type !rules",
+							"fragments": [
+								{
+									"type": "text",
+									"text": "Welcome! ",
+									"cheermote": null,
+									"emote": null,
+									"mention": null
+								},
+								{
+									"type": "emote",
+									"text": "bleedPurple",
+									"cheermote": null,
+									"emote": {
+										"id": "62835",
+										"emote_set_id": "0",
+										"owner_id": "0",
+										"format": [
+											"static"
+										]
+									},
+									"mention": null
+								},
+								{
+									"type": "text",
+									"text": " Type !rules",
+									"cheermote": null,
+									"emote": null,
+									"mention": null
+								}
+							]
+						},
+						"starts_at": "2026-05-06T12:30:00Z",
+						"ends_at": "2026-05-06T12:35:00Z",
+						"updated_at": "2026-05-06T12:30:00Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-pinned-chat-message",
+			"name": "Update Pinned Chat Message",
+			"resource": "Chat",
+			"method": "PATCH",
+			"path": "/helix/chat/pins",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "pin-chat-message",
+			"name": "Pin Chat Message",
+			"resource": "Chat",
+			"method": "PUT",
+			"path": "/helix/chat/pins",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-chat-settings",
+			"name": "Get Chat Settings",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/chat/settings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"slow_mode": false,
+						"slow_mode_wait_time": null,
+						"follower_mode": true,
+						"follower_mode_duration": 0,
+						"subscriber_mode": false,
+						"emote_mode": false,
+						"unique_chat_mode": false,
+						"non_moderator_chat_delay": true,
+						"non_moderator_chat_delay_duration": 4
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-chat-settings",
+			"name": "Update Chat Settings",
+			"resource": "Chat",
+			"method": "PATCH",
+			"path": "/helix/chat/settings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"slow_mode": true,
+						"slow_mode_wait_time": 10,
+						"follower_mode": false,
+						"follower_mode_duration": null,
+						"subscriber_mode": false,
+						"emote_mode": false,
+						"unique_chat_mode": false,
+						"non_moderator_chat_delay": false,
+						"non_moderator_chat_delay_duration": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-a-shoutout",
+			"name": "Send a Shoutout",
+			"resource": "Chat",
+			"method": "POST",
+			"path": "/helix/chat/shoutouts",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-clips",
+			"name": "Get Clips",
+			"resource": "Clips",
+			"method": "GET",
+			"path": "/helix/clips",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "AwkwardHelplessSalamanderSwiftRage",
+						"url": "https://clips.twitch.tv/AwkwardHelplessSalamanderSwiftRage",
+						"embed_url": "https://clips.twitch.tv/embed?clip=AwkwardHelplessSalamanderSwiftRage",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"creator_id": "53834192",
+						"creator_name": "BlackNova03",
+						"video_id": "205586603",
+						"game_id": "488191",
+						"language": "en",
+						"title": "babymetal",
+						"view_count": 10,
+						"created_at": "2017-11-30T22:34:18Z",
+						"thumbnail_url": "https://clips-media-assets.twitch.tv/157589949-preview-480x272.jpg",
+						"duration": 60,
+						"vod_offset": 480,
+						"is_featured": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-clip",
+			"name": "Create Clip",
+			"resource": "Clips",
+			"method": "POST",
+			"path": "/helix/clips",
+			"success_statuses": [
+				202
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "FiveWordsForClipSlug",
+						"edit_url": "https://www.twitch.tv/twitchdev/clip/FiveWordsForClipSlug"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-clips-download",
+			"name": "Get Clips Download",
+			"resource": "Clips",
+			"method": "GET",
+			"path": "/helix/clips/downloads",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"clip_id": "InexpensiveDistinctFoxChefFrank",
+						"landscape_download_url": "https://production.assets.clips.twitchcdn.net/yFZG...",
+						"portrait_download_url": null
+					},
+					{
+						"clip_id": "SpinelessCloudyLeopardMcaT",
+						"landscape_download_url": "https://production.assets.clips.twitchcdn.net/542j...",
+						"portrait_download_url": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-content-classification-labels",
+			"name": "Get Content Classification Labels",
+			"resource": "CCLs",
+			"method": "GET",
+			"path": "/helix/content_classification_labels",
+			"success_statuses": [],
+			"response_template": {
+				"data": [
+					{
+						"id": "DebatedSocialIssuesAndPolitics",
+						"description": "Discussions or debates about politics or sensitive social issues such as elections, civic integrity, military conflict, and civil rights in a polarizing manner.",
+						"name": "Politics and Sensitive Social Issues"
+					},
+					{
+						"id": "DrugsIntoxication",
+						"description": "Excessive tobacco glorification or promotion, any marijuana consumption/use, legal drug and alcohol induced intoxication, discussions of illegal drugs.",
+						"name": "Drugs, Intoxication, or Excessive Tobacco Use"
+					},
+					{
+						"id": "Gambling",
+						"description": "Participating in online or in-person gambling, poker or fantasy sports, that involve the exchange of real money.",
+						"name": "Gambling"
+					},
+					{
+						"id": "MatureGame",
+						"description": "Games that are rated Mature or less suitable for a younger audience.",
+						"name": "Mature-rated game"
+					},
+					{
+						"id": "ProfanityVulgarity",
+						"description": "Prolonged, and repeated use of obscenities, profanities, and vulgarities, especially as a regular part of speech.",
+						"name": "Significant Profanity or Vulgarity"
+					},
+					{
+						"id": "SexualThemes",
+						"description": "Content that focuses on sexualized physical attributes and activities, sexual topics, or experiences.",
+						"name": "Sexual Themes"
+					},
+					{
+						"id": "ViolentGraphic",
+						"description": "Simulations and/or depictions of realistic violence, gore, extreme injury, or death.",
+						"name": "Violent and Graphic Depictions"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-drops-entitlements",
+			"name": "Get Drops Entitlements",
+			"resource": "Entitlements",
+			"method": "GET",
+			"path": "/helix/entitlements/drops",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "fb78259e-fb81-4d1b-8333-34a06ffc24c0",
+						"benefit_id": "74c52265-e214-48a6-91b9-23b6014e8041",
+						"timestamp": "2019-01-28T04:17:53.325Z",
+						"user_id": "99999",
+						"game_id": "33214",
+						"fulfillment_status": "CLAIMED",
+						"last_updated": "2019-01-28T04:17:53.325Z"
+					},
+					{
+						"id": "862750a5-265e-4ab6-9f0a-c64df3d54dd0",
+						"benefit_id": "74c52265-e214-48a6-91b9-23b6014e8041",
+						"timestamp": "2019-01-28T04:16:53.325Z",
+						"user_id": "99999",
+						"game_id": "33214",
+						"fulfillment_status": "CLAIMED",
+						"last_updated": "2021-06-15T04:16:53.325Z"
+					},
+					{
+						"id": "d8879baa-3966-4d10-8856-15fdd62cce02",
+						"benefit_id": "cdfdc5c3-65a2-43bc-8767-fde06eb4ab2c",
+						"timestamp": "2019-01-28T04:15:53.325Z",
+						"user_id": "99999",
+						"game_id": "33214",
+						"fulfillment_status": "FULFILLED",
+						"last_updated": "2019-01-28T04:17:53.325Z"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudW..."
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-drops-entitlements",
+			"name": "Update Drops Entitlements",
+			"resource": "Entitlements",
+			"method": "PATCH",
+			"path": "/helix/entitlements/drops",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"status": "SUCCESS",
+						"ids": [
+							"fb78259e-fb81-4d1b-8333-34a06ffc24c0",
+							"862750a5-265e-4ab6-9f0a-c64df3d54dd0"
+						]
+					},
+					{
+						"status": "UNAUTHORIZED",
+						"ids": [
+							"d8879baa-3966-4d10-8856-15fdd62cce02"
+						]
+					},
+					{
+						"status": "UPDATE_FAILED",
+						"ids": [
+							"9a290126-7e3b-4f66-a9ae-551537893b65"
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-conduit",
+			"name": "Delete Conduit",
+			"resource": "Conduits",
+			"method": "DELETE",
+			"path": "/helix/eventsub/conduits",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-conduits",
+			"name": "Get Conduits",
+			"resource": "Conduits",
+			"method": "GET",
+			"path": "/helix/eventsub/conduits",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "26b1c993-bfcf-44d9-b876-379dacafe75a",
+						"shard_count": 15
+					},
+					{
+						"id": "bfcfc993-26b1-b876-44d9-afe75a379dac",
+						"shard_count": 5
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-conduits",
+			"name": "Update Conduits",
+			"resource": "Conduits",
+			"method": "PATCH",
+			"path": "/helix/eventsub/conduits",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "bfcfc993-26b1-b876-44d9-afe75a379dac",
+						"shard_count": 5
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-conduits",
+			"name": "Create Conduits",
+			"resource": "Conduits",
+			"method": "POST",
+			"path": "/helix/eventsub/conduits",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "bfcfc993-26b1-b876-44d9-afe75a379dac",
+						"shard_count": 5
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-conduit-shards",
+			"name": "Get Conduit Shards",
+			"resource": "Conduits",
+			"method": "GET",
+			"path": "/helix/eventsub/conduits/shards",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "0",
+						"status": "enabled",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback.com"
+						}
+					},
+					{
+						"id": "1",
+						"status": "webhook_callback_verification_pending",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback-2.com"
+						}
+					},
+					{
+						"id": "2",
+						"status": "enabled",
+						"transport": {
+							"method": "websocket",
+							"session_id": "9fd5164a-a958-4c60-b7f4-6a7202506ca0",
+							"connected_at": "2020-11-10T14:32:18.730260295Z"
+						}
+					},
+					{
+						"id": "3",
+						"status": "enabled",
+						"transport": {
+							"method": "websocket",
+							"session_id": "238b4b08-13f1-4b8f-8d31-56665a7a9d9f",
+							"connected_at": "2020-11-10T14:32:18.730260295Z"
+						}
+					},
+					{
+						"id": "4",
+						"status": "websocket_disconnected",
+						"transport": {
+							"method": "websocket",
+							"session_id": "ad1c9fc3-0d99-4eb7-8a04-8608e8ff9ec9",
+							"connected_at": "2020-11-10T14:32:18.730260295Z",
+							"disconnected_at": "2020-11-11T14:32:18.730260295Z"
+						}
+					}
+				],
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-conduit-shards",
+			"name": "Update Conduit Shards",
+			"resource": "Conduits",
+			"method": "PATCH",
+			"path": "/helix/eventsub/conduits/shards",
+			"success_statuses": [
+				202
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "0",
+						"status": "enabled",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback.com"
+						}
+					},
+					{
+						"id": "1",
+						"status": "webhook_callback_verification_pending",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback-2.com"
+						}
+					}
+				],
+				"errors": [
+					{
+						"id": "3",
+						"message": "The shard id is outside the conduit's range",
+						"code": "invalid_parameter"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-eventsub-subscription",
+			"name": "Delete EventSub Subscription",
+			"resource": "EventSub",
+			"method": "DELETE",
+			"path": "/helix/eventsub/subscriptions",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-eventsub-subscriptions",
+			"name": "Get EventSub Subscriptions",
+			"resource": "EventSub",
+			"method": "GET",
+			"path": "/helix/eventsub/subscriptions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"total": 2,
+				"data": [
+					{
+						"id": "26b1c993-bfcf-44d9-b876-379dacafe75a",
+						"status": "enabled",
+						"type": "stream.online",
+						"version": "1",
+						"condition": {
+							"broadcaster_user_id": "12345"
+						},
+						"created_at": "2020-11-10T20:08:33.12345678Z",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback.com"
+						},
+						"cost": 1
+					},
+					{
+						"id": "35016908-41ff-33ce-7879-61b8dfc2ee16",
+						"status": "webhook_callback_verification_pending",
+						"type": "user.update",
+						"version": "1",
+						"condition": {
+							"user_id": "99999"
+						},
+						"created_at": "2020-11-10T14:32:18.730260295Z",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback.com"
+						},
+						"cost": 0
+					}
+				],
+				"total_cost": 1,
+				"max_total_cost": 10000,
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-eventsub-subscription",
+			"name": "Create EventSub Subscription",
+			"resource": "EventSub",
+			"method": "POST",
+			"path": "/helix/eventsub/subscriptions",
+			"success_statuses": [
+				202
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "26b1c993-bfcf-44d9-b876-379dacafe75a",
+						"status": "webhook_callback_verification_pending",
+						"type": "user.update",
+						"version": "1",
+						"condition": {
+							"user_id": "99999"
+						},
+						"created_at": "2020-11-10T14:32:18.730260295Z",
+						"transport": {
+							"method": "webhook",
+							"callback": "https://this-is-a-callback.com"
+						},
+						"cost": 1
+					}
+				],
+				"total": 1,
+				"total_cost": 1,
+				"max_total_cost": 10000
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extensions",
+			"name": "Get Extensions",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"author_name": "Twitch Developers",
+						"bits_enabled": true,
+						"can_install": false,
+						"configuration_location": "hosted",
+						"description": "An extension for testing all the features that we add to extensions",
+						"eula_tos_url": "",
+						"has_chat_support": true,
+						"icon_url": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/logob6c995d8-8b45-48cc-a748-b256e92ac1cd",
+						"icon_urls": {
+							"100x100": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/logob6c995d8-8b45-48cc-a748-b256e92ac1cd",
+							"24x24": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/taskbar905b19da-e7e5-4d8f-beb7-f543a861ac1e",
+							"300x200": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/discoveryd9545b2c-5474-46d7-a523-1c3835d862ce"
+						},
+						"id": "pgn0bjv51epi7eaekt53tovjnc82qo",
+						"name": "Official Developers Demo",
+						"privacy_policy_url": "",
+						"request_identity_link": true,
+						"screenshot_urls": [
+							"https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/screenshotbdec475d-3d2f-4378-b334-941dfddc897a"
+						],
+						"state": "Released",
+						"subscriptions_support_level": "optional",
+						"summary": "Test ALL the extensions features!",
+						"support_email": "dx-extensions-test-dev@justin.tv",
+						"version": "0.0.9",
+						"viewer_summary": "Test ALL the extensions features!",
+						"views": {
+							"mobile": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html"
+							},
+							"panel": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"height": 300,
+								"can_link_external_content": false
+							},
+							"video_overlay": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"can_link_external_content": false
+							},
+							"component": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"aspect_width": 0,
+								"aspect_height": 0,
+								"aspect_ratio_x": 48000,
+								"aspect_ratio_y": 36000,
+								"autoscale": true,
+								"scale_pixels": 1024,
+								"target_height": 5333,
+								"size": 0,
+								"zoom": false,
+								"zoom_pixels": 0,
+								"can_link_external_content": false
+							}
+						},
+						"allowlisted_config_urls": [],
+						"allowlisted_panel_urls": []
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-extension-chat-message",
+			"name": "Send Extension Chat Message",
+			"resource": "Extensions",
+			"method": "POST",
+			"path": "/helix/extensions/chat",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extension-configuration-segment",
+			"name": "Get Extension Configuration Segment",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/extensions/configurations",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"segment": "global",
+						"content": "hello config!",
+						"version": "0.0.1"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "set-extension-configuration-segment",
+			"name": "Set Extension Configuration Segment",
+			"resource": "Extensions",
+			"method": "PUT",
+			"path": "/helix/extensions/configurations",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extension-secrets",
+			"name": "Get Extension Secrets",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/extensions/jwt/secrets",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"format_version": 1,
+						"secrets": [
+							{
+								"content": "secret",
+								"active_at": "2021-03-29T06:58:40.858343036Z",
+								"expires_at": "2121-03-05T06:58:40.858343036Z"
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-extension-secret",
+			"name": "Create Extension Secret",
+			"resource": "Extensions",
+			"method": "POST",
+			"path": "/helix/extensions/jwt/secrets",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"format_version": 1,
+						"secrets": [
+							{
+								"content": "old-secret",
+								"active_at": "2021-03-29T06:58:40.858343036Z",
+								"expires_at": "2021-04-22T05:21:54.99261682Z"
+							},
+							{
+								"content": "new-secret",
+								"active_at": "2021-04-22T04:16:54.996365329Z",
+								"expires_at": "2121-03-29T04:16:54.996365329Z"
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extension-live-channels",
+			"name": "Get Extension Live Channels",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/extensions/live",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"game_name": "Tom Clancy's Rainbow Six Siege",
+						"game_id": "460630",
+						"title": "[PS4] ITA/ENG UNRANKED CHILLIN' (SUB 1/15) - !instagram !donation !sens !team !youtube"
+					},
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"game_name": "For Honor",
+						"game_id": "490382",
+						"title": "any Kätzchen ? - 680 Rep + > Kompetitive Kitten"
+					},
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"game_name": "For Honor",
+						"game_id": "490382",
+						"title": "Vazou o novo personagem! *Triste*"
+					}
+				],
+				"pagination": "YVc1emRHRnNiQ015TmpJek5qazVOVHBoYWpKbGRIZDFaR0Z5YjNCMGN6UTJNMkZ1TUdwM2FHWnBZbm8yYW5rNjoy"
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-extension-pubsub-message",
+			"name": "Send Extension PubSub Message",
+			"resource": "Extensions",
+			"method": "POST",
+			"path": "/helix/extensions/pubsub",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-released-extensions",
+			"name": "Get Released Extensions",
+			"resource": "Extensions",
+			"method": "GET",
+			"path": "/helix/extensions/released",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"author_name": "Twitch Developer Experience",
+						"bits_enabled": true,
+						"can_install": false,
+						"configuration_location": "hosted",
+						"description": "An extension for testing all the features that we add to extensions",
+						"eula_tos_url": "",
+						"has_chat_support": true,
+						"icon_url": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/logob6c995d8-8b45-48cc-a748-b256e92ac1cd",
+						"icon_urls": {
+							"100x100": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/logob6c995d8-8b45-48cc-a748-b256e92ac1cd",
+							"24x24": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/taskbar905b19da-e7e5-4d8f-beb7-f543a861ac1e",
+							"300x200": "https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/discoveryd9545b2c-5474-46d7-a523-1c3835d862ce"
+						},
+						"id": "pgn0bjv51epi7eaekt53tovjnc82qo",
+						"name": "Official Developer Experience Demo",
+						"privacy_policy_url": "",
+						"request_identity_link": true,
+						"screenshot_urls": [
+							"https://extensions-discovery-images.twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.8/screenshotbdec475d-3d2f-4378-b334-941dfddc897a"
+						],
+						"state": "Released",
+						"subscriptions_support_level": "optional",
+						"summary": "Test ALL the extensions features!",
+						"support_email": "dx-extensions-test-dev@justin.tv",
+						"version": "0.0.9",
+						"viewer_summary": "Test ALL the extensions features!",
+						"views": {
+							"mobile": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html"
+							},
+							"panel": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"height": 300,
+								"can_link_external_content": false
+							},
+							"video_overlay": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"can_link_external_content": false
+							},
+							"component": {
+								"viewer_url": "https://pgn0bjv51epi7eaekt53tovjnc82qo.ext-twitch.tv/pgn0bjv51epi7eaekt53tovjnc82qo/0.0.9/f9a0d8aae0f9dd0b2d6ef3416b96bc79/index.html",
+								"aspect_width": 0,
+								"aspect_height": 0,
+								"aspect_ratio_x": 48000,
+								"aspect_ratio_y": 36000,
+								"autoscale": true,
+								"scale_pixels": 1024,
+								"target_height": 5333,
+								"size": 0,
+								"zoom": false,
+								"zoom_pixels": 0,
+								"can_link_external_content": false
+							}
+						},
+						"allowlisted_config_urls": [],
+						"allowlisted_panel_urls": []
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "set-extension-required-configuration",
+			"name": "Set Extension Required Configuration",
+			"resource": "Extensions",
+			"method": "PUT",
+			"path": "/helix/extensions/required_configuration",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-extension-transactions",
+			"name": "Get Extension Transactions",
+			"resource": "Bits",
+			"method": "GET",
+			"path": "/helix/extensions/transactions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "74c52265-e214-48a6-91b9-23b6014e8041",
+						"timestamp": "2019-01-28T04:15:53.325Z",
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"product_type": "BITS_IN_EXTENSION",
+						"product_data": {
+							"domain": "twitch.ext.uo6dggojyb8d6soh92zknwmi5ej1q2",
+							"sku": "testSku100",
+							"cost": {
+								"amount": 100,
+								"type": "bits"
+							},
+							"inDevelopment": false,
+							"displayName": "Test Product 100",
+							"expiration": "",
+							"broadcast": false
+						}
+					},
+					{
+						"id": "8d303dc6-a460-4945-9f48-59c31d6735cb",
+						"timestamp": "2019-01-18T09:10:13.397Z",
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"product_type": "BITS_IN_EXTENSION",
+						"product_data": {
+							"domain": "twitch.ext.uo6dggojyb8d6soh92zknwmi5ej1q2",
+							"sku": "testSku200",
+							"cost": {
+								"amount": 200,
+								"type": "bits"
+							},
+							"inDevelopment": false,
+							"displayName": "Test Product 200",
+							"expiration": "",
+							"broadcast": false
+						}
+					}
+				],
+				"pagination": {
+					"cursor": "cursorString"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-games",
+			"name": "Get Games",
+			"resource": "Games",
+			"method": "GET",
+			"path": "/helix/games",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "33214",
+						"name": "Fortnite",
+						"box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33214-{width}x{height}.jpg",
+						"igdb_id": "1905"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-top-games",
+			"name": "Get Top Games",
+			"resource": "Games",
+			"method": "GET",
+			"path": "/helix/games/top",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "493057",
+						"name": "PUBG: BATTLEGROUNDS",
+						"box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/493057-{width}x{height}.jpg",
+						"igdb_id": "27789"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ=="
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-creator-goals",
+			"name": "Get Creator Goals",
+			"resource": "Goals",
+			"method": "GET",
+			"path": "/helix/goals",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "1woowvbkiNv8BRxEWSqmQz6Zk92",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"type": "follower",
+						"description": "Follow goal for Helix testing",
+						"current_amount": 27062,
+						"target_amount": 30000,
+						"created_at": "2021-08-16T17:22:23Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-guest-star-settings",
+			"name": "Get Channel Guest Star Settings",
+			"resource": "Guest Star",
+			"method": "GET",
+			"path": "/helix/guest_star/channel_settings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"is_moderator_send_live_enabled": true,
+						"slot_count": 4,
+						"is_browser_source_audio_enabled": true,
+						"layout": "TILED_LAYOUT",
+						"browser_source_token": "eihq8rew7q3hgierufhi3q"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-channel-guest-star-settings",
+			"name": "Update Channel Guest Star Settings",
+			"resource": "Guest Star",
+			"method": "PUT",
+			"path": "/helix/guest_star/channel_settings",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-guest-star-invite",
+			"name": "Delete Guest Star Invite",
+			"resource": "Guest Star",
+			"method": "DELETE",
+			"path": "/helix/guest_star/invites",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-guest-star-invites",
+			"name": "Get Guest Star Invites",
+			"resource": "Guest Star",
+			"method": "GET",
+			"path": "/helix/guest_star/invites",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"invited_at": "2023-01-02T04:16:53.325Z",
+						"status": "INVITED",
+						"is_audio_enabled": false,
+						"is_video_enabled": true,
+						"is_audio_available": true,
+						"is_video_available": true
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-guest-star-invite",
+			"name": "Send Guest Star Invite",
+			"resource": "Guest Star",
+			"method": "POST",
+			"path": "/helix/guest_star/invites",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "end-guest-star-session",
+			"name": "End Guest Star Session",
+			"resource": "Guest Star",
+			"method": "DELETE",
+			"path": "/helix/guest_star/session",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+						"guests": [
+							{
+								"id": "0",
+								"user_id": "99999",
+								"user_display_name": "Viewer",
+								"user_login": "viewer",
+								"is_live": true,
+								"volume": 100,
+								"assigned_at": "2023-01-02T04:16:53.325Z",
+								"audio_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								},
+								"video_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								}
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-guest-star-session",
+			"name": "Get Guest Star Session",
+			"resource": "Guest Star",
+			"method": "GET",
+			"path": "/helix/guest_star/session",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+						"guests": [
+							{
+								"slot_id": "0",
+								"user_id": "99999",
+								"user_display_name": "Viewer",
+								"user_login": "viewer",
+								"is_live": true,
+								"volume": 100,
+								"assigned_at": "2023-01-02T04:16:53.325Z",
+								"audio_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								},
+								"video_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								}
+							},
+							{
+								"slot_id": "1",
+								"user_id": "99999",
+								"user_display_name": "Viewer",
+								"user_login": "viewer",
+								"is_live": true,
+								"volume": 100,
+								"assigned_at": "2023-01-02T04:20:59.325Z",
+								"audio_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								},
+								"video_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								}
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-guest-star-session",
+			"name": "Create Guest Star Session",
+			"resource": "Guest Star",
+			"method": "POST",
+			"path": "/helix/guest_star/session",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+						"guests": [
+							{
+								"id": "0",
+								"user_id": "99999",
+								"user_display_name": "Viewer",
+								"user_login": "viewer",
+								"is_live": true,
+								"volume": 100,
+								"assigned_at": "2023-01-02T04:16:53.325Z",
+								"audio_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								},
+								"video_settings": {
+									"is_available": true,
+									"is_host_enabled": true,
+									"is_guest_enabled": true
+								}
+							}
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-guest-star-slot",
+			"name": "Delete Guest Star Slot",
+			"resource": "Guest Star",
+			"method": "DELETE",
+			"path": "/helix/guest_star/slot",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "update-guest-star-slot",
+			"name": "Update Guest Star Slot",
+			"resource": "Guest Star",
+			"method": "PATCH",
+			"path": "/helix/guest_star/slot",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "assign-guest-star-slot",
+			"name": "Assign Guest Star Slot",
+			"resource": "Guest Star",
+			"method": "POST",
+			"path": "/helix/guest_star/slot",
+			"success_statuses": [
+				204
+			],
+			"response_template": {
+				"data": {
+					"code": "USER_NOT_READY"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-guest-star-slot-settings",
+			"name": "Update Guest Star Slot Settings",
+			"resource": "Guest Star",
+			"method": "PATCH",
+			"path": "/helix/guest_star/slot_settings",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-hype-train-status",
+			"name": "Get Hype Train Status",
+			"resource": "Hype Train",
+			"method": "GET",
+			"path": "/helix/hypetrain/status",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"current": {
+							"id": "1b0AsbInCHZW2SQFQkCzqN07Ib2",
+							"broadcaster_user_id": "12345",
+							"broadcaster_user_login": "mockstreamer",
+							"broadcaster_user_name": "MockStreamer",
+							"level": 2,
+							"total": 700,
+							"progress": 200,
+							"goal": 1000,
+							"top_contributions": [
+								{
+									"user_id": "99999",
+									"user_login": "viewer",
+									"user_name": "Viewer",
+									"type": "bits",
+									"total": 50
+								},
+								{
+									"user_id": "99999",
+									"user_login": "viewer",
+									"user_name": "Viewer",
+									"type": "subscription",
+									"total": 45
+								}
+							],
+							"shared_train_participants": [
+								{
+									"broadcaster_user_id": "12345",
+									"broadcaster_user_login": "mockstreamer",
+									"broadcaster_user_name": "MockStreamer"
+								},
+								{
+									"broadcaster_user_id": "12345",
+									"broadcaster_user_login": "mockstreamer",
+									"broadcaster_user_name": "MockStreamer"
+								}
+							],
+							"started_at": "2020-07-15T17:16:03.17106713Z",
+							"expires_at": "2020-07-15T17:16:11.17106713Z",
+							"type": "golden_kappa",
+							"is_shared_train": true
+						},
+						"all_time_high": {
+							"level": 6,
+							"total": 2850,
+							"achieved_at": "2020-04-24T20:12:21.003802269Z"
+						},
+						"shared_all_time_high": {
+							"level": 16,
+							"total": 23850,
+							"achieved_at": "2020-04-27T20:12:21.003802269Z"
+						}
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "manage-held-automod-messages",
+			"name": "Manage Held AutoMod Messages",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/automod/message",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-automod-settings",
+			"name": "Get AutoMod Settings",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/automod/settings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"overall_level": null,
+						"disability": 0,
+						"aggression": 0,
+						"sexuality_sex_or_gender": 0,
+						"misogyny": 0,
+						"bullying": 0,
+						"swearing": 0,
+						"race_ethnicity_or_religion": 0,
+						"sex_based_terms": 0
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-automod-settings",
+			"name": "Update AutoMod Settings",
+			"resource": "Moderation",
+			"method": "PUT",
+			"path": "/helix/moderation/automod/settings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"overall_level": 3,
+						"disability": 3,
+						"aggression": 3,
+						"sexuality_sex_or_gender": 3,
+						"misogyny": 3,
+						"bullying": 2,
+						"swearing": 0,
+						"race_ethnicity_or_religion": 3,
+						"sex_based_terms": 3
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-banned-users",
+			"name": "Get Banned Users",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/banned",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"expires_at": "2022-03-15T02:00:28Z",
+						"created_at": "2022-03-15T01:30:28Z",
+						"reason": "Does not like pineapple on pizza.",
+						"moderator_id": "67890",
+						"moderator_login": "mockbot",
+						"moderator_name": "MockBot"
+					},
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"expires_at": "2022-08-07T02:07:55Z",
+						"created_at": "2022-08-07T02:02:55Z",
+						"reason": "Inappropriate words.",
+						"moderator_id": "67890",
+						"moderator_login": "mockbot",
+						"moderator_name": "MockBot"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN1cnNvciI6IjEwMDQ3MzA2NDo4NjQwNjU3MToxSVZCVDFKMnY5M1BTOXh3d1E0dUdXMkJOMFcifX0"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "unban-user",
+			"name": "Unban User",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/moderation/bans",
+			"success_statuses": [
+				204
+			],
+			"response_template": {
+				"error": "Bad Request",
+				"status": 400,
+				"message": "user is not banned"
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "ban-user",
+			"name": "Ban User",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/bans",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"user_id": "99999",
+						"created_at": "2021-09-28T18:22:31Z",
+						"end_time": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "remove-blocked-term",
+			"name": "Remove Blocked Term",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/moderation/blocked_terms",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-blocked-terms",
+			"name": "Get Blocked Terms",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/blocked_terms",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "add-blocked-term",
+			"name": "Add Blocked Term",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/blocked_terms",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"id": "3bb6e5d3-afb1-416c-ad4e-21af970ccfe7",
+						"text": "A phrase I’m not fond of",
+						"created_at": "2021-09-29T15:36:45Z",
+						"updated_at": "2021-09-29T15:36:45Z",
+						"expires_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-moderated-channels",
+			"name": "Get Moderated Channels",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/channels",
+			"success_statuses": [],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer"
+					},
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN1cnNvciI6IjEwMDQ3MzA2NDo4NjQwNjU3MToxSVZCVDFKMnY5M1BTOXh3d1E0dUdXMkJOMFcifX0"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-chat-messages",
+			"name": "Delete Chat Messages",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/moderation/chat",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "check-automod-status",
+			"name": "Check AutoMod Status",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/enforcements/status",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"msg_id": "123",
+						"is_permitted": true
+					},
+					{
+						"msg_id": "393",
+						"is_permitted": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "remove-channel-moderator",
+			"name": "Remove Channel Moderator",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/moderation/moderators",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-moderators",
+			"name": "Get Moderators",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/moderators",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN1cnNvciI6IjEwMDQ3MzA2NDo4NjQwNjU3MToxSVZCVDFKMnY5M1BTOXh3d1E0dUdXMkJOMFcifX0"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "add-channel-moderator",
+			"name": "Add Channel Moderator",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/moderators",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-shield-mode-status",
+			"name": "Get Shield Mode Status",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/shield_mode",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"is_active": true,
+						"moderator_id": "67890",
+						"moderator_name": "MockBot",
+						"moderator_login": "mockbot",
+						"last_activated_at": "2022-07-26T17:16:03.123Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-shield-mode-status",
+			"name": "Update Shield Mode Status",
+			"resource": "Moderation",
+			"method": "PUT",
+			"path": "/helix/moderation/shield_mode",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"is_active": false,
+						"moderator_id": "67890",
+						"moderator_name": "MockBot",
+						"moderator_login": "mockbot",
+						"last_activated_at": "2022-07-26T17:16:03.123Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "remove-suspicious-status-from-chat-user",
+			"name": "Remove Suspicious Status From Chat User",
+			"resource": "Moderation",
+			"method": "DELETE",
+			"path": "/helix/moderation/suspicious_users",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "add-suspicious-status-to-chat-user",
+			"name": "Add Suspicious Status to Chat User",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/suspicious_users",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"updated_at": "2025-12-01T23:08:18+00:00",
+						"status": "RESTRICTED",
+						"types": [
+							"MANUALLY_ADDED"
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-unban-requests",
+			"name": "Get Unban Requests",
+			"resource": "Moderation",
+			"method": "GET",
+			"path": "/helix/moderation/unban_requests",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"moderator_login": "mockbot",
+						"moderator_name": "MockBot",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"text": "Please unban me from the channel?",
+						"status": "pending",
+						"created_at": "2022-08-07T02:07:55Z",
+						"resolved_at": null,
+						"resolution_text": null
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN1cnNvciI6IjEwMDQ3MzA2NDo4NjQwNjU3MToxSVZCVDFKMnY5M1BTOXh3d1E0dUdXMkJOMFcifX0"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "resolve-unban-requests",
+			"name": "Resolve Unban Requests",
+			"resource": "Moderation",
+			"method": "PATCH",
+			"path": "/helix/moderation/unban_requests",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_id": "12345",
+						"moderator_id": "67890",
+						"moderator_login": "mockbot",
+						"moderator_name": "MockBot",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"text": "Please unban me from the channel?",
+						"status": "approved",
+						"created_at": "2022-08-07T02:07:55Z",
+						"resolved_at": "2022-08-09T02:07:55Z",
+						"resolution_text": ""
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "warn-chat-user",
+			"name": "Warn Chat User",
+			"resource": "Moderation",
+			"method": "POST",
+			"path": "/helix/moderation/warnings",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"user_id": "99999",
+						"moderator_id": "67890",
+						"reason": "stop doing that!"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-polls",
+			"name": "Get Polls",
+			"resource": "Polls",
+			"method": "GET",
+			"path": "/helix/polls",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "ed961efd-8a3f-4cf5-a9d0-e616c590cd2a",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Heads or Tails?",
+						"choices": [
+							{
+								"id": "4c123012-1351-4f33-84b7-43856e7a0f47",
+								"title": "Heads",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							},
+							{
+								"id": "279087e3-54a7-467e-bcd0-c1393fcea4f0",
+								"title": "Tails",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							}
+						],
+						"bits_voting_enabled": false,
+						"bits_per_vote": 0,
+						"channel_points_voting_enabled": false,
+						"channel_points_per_vote": 0,
+						"status": "ACTIVE",
+						"duration": 1800,
+						"started_at": "2021-03-19T06:08:33.871278372Z"
+					}
+				],
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "end-poll",
+			"name": "End Poll",
+			"resource": "Polls",
+			"method": "PATCH",
+			"path": "/helix/polls",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "ed961efd-8a3f-4cf5-a9d0-e616c590cd2a",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Heads or Tails?",
+						"choices": [
+							{
+								"id": "4c123012-1351-4f33-84b7-43856e7a0f47",
+								"title": "Heads",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							},
+							{
+								"id": "279087e3-54a7-467e-bcd0-c1393fcea4f0",
+								"title": "Tails",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							}
+						],
+						"bits_voting_enabled": false,
+						"bits_per_vote": 0,
+						"channel_points_voting_enabled": true,
+						"channel_points_per_vote": 100,
+						"status": "TERMINATED",
+						"duration": 1800,
+						"started_at": "2021-03-19T06:08:33.871278372Z",
+						"ended_at": "2021-03-19T06:11:26.746889614Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-poll",
+			"name": "Create Poll",
+			"resource": "Polls",
+			"method": "POST",
+			"path": "/helix/polls",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "ed961efd-8a3f-4cf5-a9d0-e616c590cd2a",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Heads or Tails?",
+						"choices": [
+							{
+								"id": "4c123012-1351-4f33-84b7-43856e7a0f47",
+								"title": "Heads",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							},
+							{
+								"id": "279087e3-54a7-467e-bcd0-c1393fcea4f0",
+								"title": "Tails",
+								"votes": 0,
+								"channel_points_votes": 0,
+								"bits_votes": 0
+							}
+						],
+						"bits_voting_enabled": false,
+						"bits_per_vote": 0,
+						"channel_points_voting_enabled": true,
+						"channel_points_per_vote": 100,
+						"status": "ACTIVE",
+						"duration": 1800,
+						"started_at": "2021-03-19T06:08:33.871278372Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-predictions",
+			"name": "Get Predictions",
+			"resource": "Predictions",
+			"method": "GET",
+			"path": "/helix/predictions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "d6676d5c-c86e-44d2-bfc4-100fb48f0656",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Will there be any leaks today?",
+						"winning_outcome_id": null,
+						"outcomes": [
+							{
+								"id": "021e9234-5893-49b4-982e-cfe9a0aaddd9",
+								"title": "Yes",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "BLUE"
+							},
+							{
+								"id": "ded84c26-13cb-4b48-8cb5-5bae3ec3a66e",
+								"title": "No",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "PINK"
+							}
+						],
+						"prediction_window": 600,
+						"status": "ACTIVE",
+						"created_at": "2021-04-28T16:03:06.320848689Z",
+						"ended_at": null,
+						"locked_at": null
+					}
+				],
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "end-prediction",
+			"name": "End Prediction",
+			"resource": "Predictions",
+			"method": "PATCH",
+			"path": "/helix/predictions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "bc637af0-7766-4525-9308-4112f4cbf178",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Will we win all the games?",
+						"winning_outcome_id": "73085848-a94d-4040-9d21-2cb7a89374b7",
+						"outcomes": [
+							{
+								"id": "73085848-a94d-4040-9d21-2cb7a89374b7",
+								"title": "yes",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "BLUE"
+							},
+							{
+								"id": "86010b2e-9764-4136-9359-fd1c9c5a8033",
+								"title": "no",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "PINK"
+							}
+						],
+						"prediction_window": 120,
+						"status": "RESOLVED",
+						"created_at": "2021-04-28T21:48:19.480371331Z",
+						"ended_at": "2021-04-28T21:54:24.026833954Z",
+						"locked_at": "2021-04-28T21:48:34.636685705Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-prediction",
+			"name": "Create Prediction",
+			"resource": "Predictions",
+			"method": "POST",
+			"path": "/helix/predictions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "bc637af0-7766-4525-9308-4112f4cbf178",
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"title": "Any leeks in the stream?",
+						"winning_outcome_id": null,
+						"outcomes": [
+							{
+								"id": "73085848-a94d-4040-9d21-2cb7a89374b7",
+								"title": "Yes, give it time.",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "BLUE"
+							},
+							{
+								"id": "906b70ba-1f12-47ea-9e95-e5f93d20e9cc",
+								"title": "Definitely not.",
+								"users": 0,
+								"channel_points": 0,
+								"top_predictors": null,
+								"color": "PINK"
+							}
+						],
+						"prediction_window": 120,
+						"status": "ACTIVE",
+						"created_at": "2021-04-28T17:11:22.595914172Z",
+						"ended_at": null,
+						"locked_at": null
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "cancel-a-raid",
+			"name": "Cancel a raid",
+			"resource": "Raids",
+			"method": "DELETE",
+			"path": "/helix/raids",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "start-a-raid",
+			"name": "Start a raid",
+			"resource": "Raids",
+			"method": "POST",
+			"path": "/helix/raids",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"created_at": "2022-02-18T07:20:50.52Z",
+						"is_mature": false
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-stream-schedule",
+			"name": "Get Channel Stream Schedule",
+			"resource": "Schedule",
+			"method": "GET",
+			"path": "/helix/schedule",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": {
+					"segments": [
+						{
+							"id": "eyJzZWdtZW50SUQiOiJlNGFjYzcyNC0zNzFmLTQwMmMtODFjYS0yM2FkYTc5NzU5ZDQiLCJpc29ZZWFyIjoyMDIxLCJpc29XZWVrIjoyNn0=",
+							"start_time": "2021-07-01T18:00:00Z",
+							"end_time": "2021-07-01T19:00:00Z",
+							"title": "TwitchDev Monthly Update // July 1, 2021",
+							"canceled_until": null,
+							"category": {
+								"id": "509670",
+								"name": "Science & Technology"
+							},
+							"is_recurring": false
+						}
+					],
+					"broadcaster_id": "12345",
+					"broadcaster_name": "MockStreamer",
+					"broadcaster_login": "mockstreamer",
+					"vacation": null
+				},
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-icalendar",
+			"name": "Get Channel iCalendar",
+			"resource": "Schedule",
+			"method": "GET",
+			"path": "/helix/schedule/icalendar",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-channel-stream-schedule-segment",
+			"name": "Delete Channel Stream Schedule Segment",
+			"resource": "Schedule",
+			"method": "DELETE",
+			"path": "/helix/schedule/segment",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "update-channel-stream-schedule-segment",
+			"name": "Update Channel Stream Schedule Segment",
+			"resource": "Schedule",
+			"method": "PATCH",
+			"path": "/helix/schedule/segment",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": {
+					"segments": [
+						{
+							"id": "eyJzZWdtZW50SUQiOiJlNGFjYzcyNC0zNzFmLTQwMmMtODFjYS0yM2FkYTc5NzU5ZDQiLCJpc29ZZWFyIjoyMDIxLCJpc29XZWVrIjoyNn0=",
+							"start_time": "2021-07-01T18:00:00Z",
+							"end_time": "2021-07-01T20:00:00Z",
+							"title": "TwitchDev Monthly Update // July 1, 2021",
+							"canceled_until": null,
+							"category": {
+								"id": "509670",
+								"name": "Science & Technology"
+							},
+							"is_recurring": false
+						}
+					],
+					"broadcaster_id": "12345",
+					"broadcaster_name": "MockStreamer",
+					"broadcaster_login": "mockstreamer",
+					"vacation": null
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-channel-stream-schedule-segment",
+			"name": "Create Channel Stream Schedule Segment",
+			"resource": "Schedule",
+			"method": "POST",
+			"path": "/helix/schedule/segment",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": {
+					"segments": [
+						{
+							"id": "eyJzZWdtZW50SUQiOiJlNGFjYzcyNC0zNzFmLTQwMmMtODFjYS0yM2FkYTc5NzU5ZDQiLCJpc29ZZWFyIjoyMDIxLCJpc29XZWVrIjoyNn0=",
+							"start_time": "2021-07-01T18:00:00Z",
+							"end_time": "2021-07-01T19:00:00Z",
+							"title": "TwitchDev Monthly Update // July 1, 2021",
+							"canceled_until": null,
+							"category": {
+								"id": "509670",
+								"name": "Science & Technology"
+							},
+							"is_recurring": false
+						}
+					],
+					"broadcaster_id": "12345",
+					"broadcaster_name": "MockStreamer",
+					"broadcaster_login": "mockstreamer",
+					"vacation": null
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-channel-stream-schedule",
+			"name": "Update Channel Stream Schedule",
+			"resource": "Schedule",
+			"method": "PATCH",
+			"path": "/helix/schedule/settings",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "search-categories",
+			"name": "Search Categories",
+			"resource": "Search",
+			"method": "GET",
+			"path": "/helix/search/categories",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "33214",
+						"name": "Fortnite",
+						"box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33214-52x72.jpg"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7IkN"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "search-channels",
+			"name": "Search Channels",
+			"resource": "Search",
+			"method": "GET",
+			"path": "/helix/search/channels",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_language": "en",
+						"broadcaster_login": "mockstreamer",
+						"display_name": "TwitchDev",
+						"game_id": "1469308723",
+						"game_name": "Software and Game Development",
+						"id": "141981764",
+						"is_live": false,
+						"tag_ids": [],
+						"tags": [
+							"WebDevelopment",
+							"GameDevelopment",
+							"SoftwareDevelopment",
+							"English"
+						],
+						"thumbnail_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/8a6381c7-d0c0-4576-b179-38bd5ce1d6af-profile_image-300x300.png",
+						"title": "Standard Output",
+						"started_at": ""
+					}
+				],
+				"pagination": {
+					"cursor": "Mg=="
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-shared-chat-session",
+			"name": "Get Shared Chat Session",
+			"resource": "Chat",
+			"method": "GET",
+			"path": "/helix/shared_chat/session",
+			"success_statuses": [
+				200
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-streams",
+			"name": "Get Streams",
+			"resource": "Streams",
+			"method": "GET",
+			"path": "/helix/streams",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "123456789",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"game_id": "494131",
+						"game_name": "Little Nightmares",
+						"type": "live",
+						"title": "hablamos y le damos a Little Nightmares 1",
+						"tags": [
+							"Español"
+						],
+						"viewer_count": 78365,
+						"started_at": "2021-03-10T15:04:21Z",
+						"language": "es",
+						"thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_auronplay-{width}x{height}.jpg",
+						"tag_ids": [],
+						"is_mature": false
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam8zT0RNMk5TNDBORFF4TlRjMU1UY3hOU3dpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqb3hOVGs0TkM0MU56RXhNekExTVRZNU1ESXNJbVFpT21aaGJITmxMQ0owSWpwMGNuVmxmUT09In19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-followed-streams",
+			"name": "Get Followed Streams",
+			"resource": "Streams",
+			"method": "GET",
+			"path": "/helix/streams/followed",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "42170724654",
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"game_id": "417752",
+						"game_name": "Talk Shows & Podcasts",
+						"type": "live",
+						"title": "AWS Howdy Partner! Y'all welcome ExtraHop to the show!",
+						"viewer_count": 20,
+						"started_at": "2021-03-31T20:57:26Z",
+						"language": "en",
+						"thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_aws-{width}x{height}.jpg",
+						"tag_ids": [],
+						"tags": [
+							"English"
+						]
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam8zT0RNMk5TNDBORFF4TlRjMU1UY3hOU3dpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqb3hOVGs0TkM0MU56RXhNekExTVRZNU1ESXNJbVFpT21aaGJITmxMQ0owSWpwMGNuVmxmUT09In19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-stream-key",
+			"name": "Get Stream Key",
+			"resource": "Streams",
+			"method": "GET",
+			"path": "/helix/streams/key",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"stream_key": "live_44322889_a34ub37c8ajv98a0"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-stream-markers",
+			"name": "Get Stream Markers",
+			"resource": "Streams",
+			"method": "GET",
+			"path": "/helix/streams/markers",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer",
+						"videos": [
+							{
+								"video_id": "456",
+								"markers": [
+									{
+										"id": "106b8d6243a4f883d25ad75e6cdffdc4",
+										"created_at": "2018-08-20T20:10:03Z",
+										"description": "hello, this is a marker!",
+										"position_seconds": 244,
+										"URL": "https://twitch.tv/twitchname/manager/highlighter/456?t=0h4m06s"
+									}
+								]
+							}
+						]
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjoiMjk1MjA0Mzk3OjI1Mzpib29rbWFyazoxMDZiOGQ1Y"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-stream-marker",
+			"name": "Create Stream Marker",
+			"resource": "Streams",
+			"method": "POST",
+			"path": "/helix/streams/markers",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": 123,
+						"created_at": "2018-08-20T20:10:03Z",
+						"description": "hello, this is a marker!",
+						"position_seconds": 244
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-stream-tags",
+			"name": "Get Stream Tags",
+			"resource": "Tags",
+			"method": "GET",
+			"path": "/helix/streams/tags",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"tag_id": "6ea6bca4-4712-4ab9-a906-e3336a9d8039",
+						"is_auto": true,
+						"localization_names": {
+							"bg-bg": "английски",
+							"cs-cz": "Angličtina",
+							"da-dk": "Engelsk",
+							"de-de": "Englisch",
+							"el-gr": "Αγγλικά",
+							"en-us": "English"
+						},
+						"localization_descriptions": {
+							"bg-bg": "За потоци с използване на английски",
+							"cs-cz": "Pro vysílání obsahující angličtinu.",
+							"da-dk": "Til streams, hvori der indgår engelsk",
+							"de-de": "Für Streams auf Englisch.",
+							"el-gr": "Για μεταδόσεις που περιλαμβάνουν τη χρήση Αγγλικών",
+							"en-us": "For streams featuring the use of English"
+						}
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-broadcaster-subscriptions",
+			"name": "Get Broadcaster Subscriptions",
+			"resource": "Subscriptions",
+			"method": "GET",
+			"path": "/helix/subscriptions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_login": "mockstreamer",
+						"broadcaster_name": "MockStreamer",
+						"gifter_id": "99999",
+						"gifter_login": "viewer",
+						"gifter_name": "Viewer",
+						"is_gift": true,
+						"tier": "1000",
+						"plan_name": "Channel Subscription (twitchdev)",
+						"user_id": "99999",
+						"user_name": "Viewer",
+						"user_login": "viewer"
+					}
+				],
+				"pagination": {
+					"cursor": "xxxx"
+				},
+				"total": 13,
+				"points": 13
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "check-user-subscription",
+			"name": "Check User Subscription",
+			"resource": "Subscriptions",
+			"method": "GET",
+			"path": "/helix/subscriptions/user",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"is_gift": false,
+						"tier": "1000"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-all-stream-tags",
+			"name": "Get All Stream Tags",
+			"resource": "Tags",
+			"method": "GET",
+			"path": "/helix/tags/streams",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"tag_id": "621fb5bf-5498-4d8f-b4ac-db4d40d401bf",
+						"is_auto": false,
+						"localization_names": {
+							"bg-bg": "Изчистване на 1 кредит",
+							"cs-cz": "1 čistý kredit",
+							"da-dk": "1 credit klaret",
+							"de-de": "Mit 1 Leben abschließen",
+							"el-gr": "1 μόνο πίστωση",
+							"en-us": "1 Credit Clear"
+						},
+						"localization_descriptions": {
+							"bg-bg": "За потоци с акцент върху завършване на аркадна игра с монети, в която не се използва продължаване",
+							"cs-cz": "Pro vysílání s důrazem na plnění mincových arkádových her bez použití pokračování.",
+							"da-dk": "Til streams med vægt på at gennemføre et arkadespil uden at bruge continues",
+							"de-de": "Für Streams mit dem Ziel, ein Coin-op-Arcade-Game mit nur einem Leben abzuschließen.",
+							"el-gr": "Για μεταδόσεις με έμφαση στην ολοκλήρωση παλαιού τύπου ηλεκτρονικών παιχνιδιών που λειτουργούν με κέρμα, χωρίς να χρησιμοποιούν συνέχειες",
+							"en-us": "For streams with an emphasis on completing a coin-op arcade game without using any continues"
+						}
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiI..."
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-teams",
+			"name": "Get Teams",
+			"resource": "Teams",
+			"method": "GET",
+			"path": "/helix/teams",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"users": [
+							{
+								"user_id": "99999",
+								"user_name": "Viewer",
+								"user_login": "viewer"
+							},
+							{
+								"user_id": "99999",
+								"user_name": "Viewer",
+								"user_login": "viewer"
+							}
+						],
+						"background_image_url": null,
+						"banner": null,
+						"created_at": "2019-02-11T12:09:22Z",
+						"updated_at": "2020-11-18T15:56:41Z",
+						"info": "<p>An outgoing and enthusiastic group of friendly channels that write code, teach about technology, and promote the technical community.</p>",
+						"thumbnail_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/team-livecoders-team_logo_image-bf1d9a87ca81432687de60e24ad9593d-600x600.png",
+						"team_name": "livecoders",
+						"team_display_name": "Live Coders",
+						"id": "6358"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-channel-teams",
+			"name": "Get Channel Teams",
+			"resource": "Teams",
+			"method": "GET",
+			"path": "/helix/teams/channel",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"broadcaster_id": "12345",
+						"broadcaster_name": "MockStreamer",
+						"broadcaster_login": "mockstreamer",
+						"background_image_url": null,
+						"banner": null,
+						"created_at": "2019-02-11T12:09:22Z",
+						"updated_at": "2020-11-18T15:56:41Z",
+						"info": "<p>An outgoing and enthusiastic group of friendly channels that write code, teach about technology, and promote the technical community.</p>",
+						"thumbnail_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/team-livecoders-team_logo_image-bf1d9a87ca81432687de60e24ad9593d-600x600.png",
+						"team_name": "livecoders",
+						"team_display_name": "Live Coders",
+						"id": "6358"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-users",
+			"name": "Get Users",
+			"resource": "Users",
+			"method": "GET",
+			"path": "/helix/users",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "141981764",
+						"login": "twitchdev",
+						"display_name": "TwitchDev",
+						"type": "",
+						"broadcaster_type": "partner",
+						"description": "Supporting third-party developers building Twitch integrations from chatbots to game integrations.",
+						"profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/8a6381c7-d0c0-4576-b179-38bd5ce1d6af-profile_image-300x300.png",
+						"offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/3f13ab61-ec78-4fe6-8481-8682cb3b0ac2-channel_offline_image-1920x1080.png",
+						"view_count": 0,
+						"email": "not-real@email.com",
+						"created_at": "2016-12-14T20:32:28Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-user",
+			"name": "Update User",
+			"resource": "Users",
+			"method": "PUT",
+			"path": "/helix/users",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "44322889",
+						"login": "dallas",
+						"display_name": "dallas",
+						"type": "staff",
+						"broadcaster_type": "affiliate",
+						"description": "BaldAngel",
+						"profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/4d1f36cbf1f0072d-profile_image-300x300.png",
+						"offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/dallas-channel_offline_image-2e82c1df2a464df7-1920x1080.jpeg",
+						"view_count": 6995,
+						"email": "not-real@email.com",
+						"created_at": "2013-06-03T19:12:02.580593Z"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "unblock-user",
+			"name": "Unblock User",
+			"resource": "Users",
+			"method": "DELETE",
+			"path": "/helix/users/blocks",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-user-block-list",
+			"name": "Get User Block List",
+			"resource": "Users",
+			"method": "GET",
+			"path": "/helix/users/blocks",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"display_name": "BlueLava"
+					},
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"display_name": "TravistyOJ"
+					}
+				],
+				"pagination": {
+					"cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6NX19"
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "block-user",
+			"name": "Block User",
+			"resource": "Users",
+			"method": "PUT",
+			"path": "/helix/users/blocks",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		},
+		{
+			"slug": "get-user-active-extensions",
+			"name": "Get User Active Extensions",
+			"resource": "Users",
+			"method": "GET",
+			"path": "/helix/users/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": {
+					"panel": {
+						"1": {
+							"active": true,
+							"id": "rh6jq1q334hqc2rr1qlzqbvwlfl3x0",
+							"version": "1.1.0",
+							"name": "TopClip"
+						},
+						"2": {
+							"active": true,
+							"id": "wi08ebtatdc7oj83wtl9uxwz807l8b",
+							"version": "1.1.8",
+							"name": "Streamlabs Leaderboard"
+						},
+						"3": {
+							"active": true,
+							"id": "naty2zwfp7vecaivuve8ef1hohh6bo",
+							"version": "1.0.9",
+							"name": "Streamlabs Stream Schedule & Countdown"
+						}
+					},
+					"overlay": {
+						"1": {
+							"active": true,
+							"id": "zfh2irvx2jb4s60f02jq0ajm8vwgka",
+							"version": "1.0.19",
+							"name": "Streamlabs"
+						}
+					},
+					"component": {
+						"1": {
+							"active": true,
+							"id": "lqnf3zxk0rv0g7gq92mtmnirjz2cjj",
+							"version": "0.0.1",
+							"name": "Dev Experience Test",
+							"x": 0,
+							"y": 0
+						},
+						"2": {
+							"active": false
+						}
+					}
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "update-user-extensions",
+			"name": "Update User Extensions",
+			"resource": "Users",
+			"method": "PUT",
+			"path": "/helix/users/extensions",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": {
+					"panel": {
+						"1": {
+							"active": true,
+							"id": "rh6jq1q334hqc2rr1qlzqbvwlfl3x0",
+							"version": "1.1.0",
+							"name": "TopClip"
+						},
+						"2": {
+							"active": true,
+							"id": "wi08ebtatdc7oj83wtl9uxwz807l8b",
+							"version": "1.1.8",
+							"name": "Streamlabs Leaderboard"
+						},
+						"3": {
+							"active": true,
+							"id": "naty2zwfp7vecaivuve8ef1hohh6bo",
+							"version": "1.0.9",
+							"name": "Streamlabs Stream Schedule & Countdown"
+						}
+					},
+					"overlay": {
+						"1": {
+							"active": true,
+							"id": "zfh2irvx2jb4s60f02jq0ajm8vwgka",
+							"version": "1.0.19",
+							"name": "Streamlabs"
+						}
+					},
+					"component": {
+						"1": {
+							"active": true,
+							"id": "lqnf3zxk0rv0g7gq92mtmnirjz2cjj",
+							"version": "0.0.1",
+							"name": "Dev Experience Test",
+							"x": 0,
+							"y": 0
+						},
+						"2": {
+							"active": false
+						}
+					}
+				}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-user-extensions",
+			"name": "Get User Extensions",
+			"resource": "Users",
+			"method": "GET",
+			"path": "/helix/users/extensions/list",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "wi08ebtatdc7oj83wtl9uxwz807l8b",
+						"version": "1.1.8",
+						"name": "Streamlabs Leaderboard",
+						"can_activate": true,
+						"type": [
+							"panel"
+						]
+					},
+					{
+						"id": "d4uvtfdr04uq6raoenvj7m86gdk16v",
+						"version": "2.0.2",
+						"name": "Prime Subscription and Loot Reminder",
+						"can_activate": true,
+						"type": [
+							"overlay"
+						]
+					},
+					{
+						"id": "rh6jq1q334hqc2rr1qlzqbvwlfl3x0",
+						"version": "1.1.0",
+						"name": "TopClip",
+						"can_activate": true,
+						"type": [
+							"mobile",
+							"panel"
+						]
+					},
+					{
+						"id": "zfh2irvx2jb4s60f02jq0ajm8vwgka",
+						"version": "1.0.19",
+						"name": "Streamlabs",
+						"can_activate": true,
+						"type": [
+							"mobile",
+							"overlay"
+						]
+					},
+					{
+						"id": "lqnf3zxk0rv0g7gq92mtmnirjz2cjj",
+						"version": "0.0.1",
+						"name": "Dev Experience Test",
+						"can_activate": true,
+						"type": [
+							"component",
+							"mobile",
+							"panel",
+							"overlay"
+						]
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "delete-videos",
+			"name": "Delete Videos",
+			"resource": "Videos",
+			"method": "DELETE",
+			"path": "/helix/videos",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					"1234",
+					"9876"
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "get-videos",
+			"name": "Get Videos",
+			"resource": "Videos",
+			"method": "GET",
+			"path": "/helix/videos",
+			"success_statuses": [
+				200
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "335921245",
+						"stream_id": null,
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"title": "Twitch Developers 101",
+						"description": "Welcome to Twitch development! Here is a quick overview of our products and information to help you get started.",
+						"created_at": "2018-11-14T21:30:18Z",
+						"published_at": "2018-11-14T22:04:30Z",
+						"url": "https://www.twitch.tv/videos/335921245",
+						"thumbnail_url": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/twitchdev/335921245/ce0f3a7f-57a3-4152-bc06-0c6610189fb3/thumb/index-0000000000-%{width}x%{height}.jpg",
+						"viewable": "public",
+						"view_count": 1863062,
+						"language": "en",
+						"type": "upload",
+						"duration": "3m21s",
+						"muted_segments": [
+							{
+								"duration": 30,
+								"offset": 120
+							}
+						]
+					}
+				],
+				"pagination": {}
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "create-clip-from-vod",
+			"name": "Create Clip From VOD",
+			"resource": "Clips",
+			"method": "POST",
+			"path": "/helix/videos/clips",
+			"success_statuses": [
+				202
+			],
+			"response_template": {
+				"data": [
+					{
+						"id": "FiveWordsForClipSlug",
+						"edit_url": "https://www.twitch.tv/twitchdev/clip/FiveWordsForClipSlug"
+					}
+				]
+			},
+			"request_body_example": null
+		},
+		{
+			"slug": "send-whisper",
+			"name": "Send Whisper",
+			"resource": "Whispers",
+			"method": "POST",
+			"path": "/helix/whispers",
+			"success_statuses": [
+				204
+			],
+			"response_template": null,
+			"request_body_example": null
+		}
+	]
+}

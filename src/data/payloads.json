@@ -1,0 +1,2554 @@
+{
+	"generatedFrom": "https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/",
+	"entries": [
+		{
+			"type": "automod.message.hold",
+			"name": "Automod Message Hold",
+			"version": "1",
+			"description": "A user is notified if a message is caught by automod for review.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"message_id": "bad-message-id",
+				"message": "This is a bad message… ",
+				"level": 5,
+				"category": "aggressive",
+				"held_at": "2022-12-02T15:00:00.00Z",
+				"fragments": {
+					"emotes": [
+						{
+							"text": "badtextemote1",
+							"id": "emote-123",
+							"set-id": "set-emote-1"
+						},
+						{
+							"text": "badtextemote2",
+							"id": "emote-234",
+							"set-id": "set-emote-2"
+						}
+					],
+					"cheermotes": [
+						{
+							"text": "badtextcheermote1",
+							"amount": 1000,
+							"prefix": "prefix",
+							"tier": 1
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "automod.message.hold",
+			"name": "Automod Message Hold V2",
+			"version": "2",
+			"description": "A user is notified if a message is caught by automod for review. Only public blocked terms trigger notifications, not private ones.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"message_id": "bad-message-id",
+				"message": {
+					"text": "This is a bad message… pogchamp",
+					"fragments": [
+						{
+							"type": "text",
+							"text": "This is a bad message… ",
+							"cheermote": null,
+							"emote": null
+						},
+						{
+							"type": "cheermote",
+							"text": "pogchamp",
+							"cheermote": {
+								"prefix": "pogchamp",
+								"bits": 1000,
+								"tier": 1
+							},
+							"emote": null
+						}
+					]
+				},
+				"reason": "automod",
+				"automod": {
+					"category": "aggressive",
+					"level": 1,
+					"boundaries": [
+						{
+							"start_pos": 0,
+							"end_pos": 10
+						},
+						{
+							"start_pos": 20,
+							"end_pos": 30
+						}
+					]
+				},
+				"blocked_term": null,
+				"held_at": "2022-12-02T15:00:00.00Z"
+			}
+		},
+		{
+			"type": "automod.message.update",
+			"name": "Automod Message Update",
+			"version": "1",
+			"description": "A message in the automod queue had its status changed.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"message_id": "bad-message-id",
+				"message": "This is a bad message… ",
+				"level": 5,
+				"category": "aggressive",
+				"status": "approved",
+				"held_at": "2022-12-02T15:00:00.00Z",
+				"fragments": {
+					"emotes": [
+						{
+							"text": "badtextemote1",
+							"id": "emote-123",
+							"set-id": "set-emote-1"
+						},
+						{
+							"text": "badtextemote2",
+							"id": "emote-234",
+							"set-id": "set-emote-2"
+						}
+					],
+					"cheermotes": [
+						{
+							"text": "badtextcheermote1",
+							"amount": 1000,
+							"prefix": "prefix",
+							"tier": 1
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "automod.message.update",
+			"name": "Automod Message Update V2",
+			"version": "2",
+			"description": "A message in the automod queue had its status changed. Only public blocked terms trigger notifications, not private ones.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"message_id": "bad-message-id",
+				"message": {
+					"text": "This is a bad message… pogchamp",
+					"fragments": [
+						{
+							"type": "text",
+							"text": "This is a bad message… ",
+							"cheermote": null,
+							"emote": null
+						},
+						{
+							"type": "cheermote",
+							"text": "pogchamp",
+							"cheermote": {
+								"prefix": "pogchamp",
+								"bits": 1000,
+								"tier": 1
+							},
+							"emote": null
+						}
+					]
+				},
+				"reason": "automod",
+				"automod": null,
+				"blocked_term": {
+					"terms_found": [
+						{
+							"term_id": "123",
+							"owner_broadcaster_user_id": "12345",
+							"owner_broadcaster_user_login": "mockstreamer",
+							"owner_broadcaster_user_name": "MockStreamer",
+							"boundary": {
+								"start_pos": 0,
+								"end_pos": 30
+							}
+						}
+					]
+				},
+				"status": "approved",
+				"held_at": "2022-12-02T15:00:00.00Z"
+			}
+		},
+		{
+			"type": "automod.settings.update",
+			"name": "Automod Settings Update",
+			"version": "1",
+			"description": "A notification is sent when a broadcaster’s automod settings are updated.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"data": [
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer",
+						"moderator_user_id": "67890",
+						"moderator_user_name": "MockBot",
+						"moderator_user_login": "mockbot",
+						"overall_level": null,
+						"disability": 3,
+						"aggression": 3,
+						"sexuality_sex_or_gender": 3,
+						"misogyny": 3,
+						"bullying": 3,
+						"swearing": 0,
+						"race_ethnicity_or_religion": 3,
+						"sex_based_terms": 30
+					}
+				]
+			}
+		},
+		{
+			"type": "automod.terms.update",
+			"name": "Automod Terms Update",
+			"version": "1",
+			"description": "A notification is sent when a broadcaster’s automod terms are updated. Changes to private terms are not sent.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"action": "bad-message-id",
+				"from_automod": true,
+				"terms": [
+					"automodterm1",
+					"automodterm2",
+					"automodterm3"
+				]
+			}
+		},
+		{
+			"type": "channel.ad_break.begin",
+			"name": "Channel Ad Break Begin",
+			"version": "1",
+			"description": "A midroll commercial break has started running.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"duration_seconds": "60",
+				"started_at": "2019-11-16T10:11:12.634234626Z",
+				"is_automatic": "false",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"requester_user_id": "67890",
+				"requester_user_login": "mockbot",
+				"requester_user_name": "MockBot"
+			}
+		},
+		{
+			"type": "channel.ban",
+			"name": "Channel Ban",
+			"version": "1",
+			"description": "A viewer is banned from the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"reason": "Offensive language",
+				"banned_at": "2020-07-15T18:15:11.17106713Z",
+				"ends_at": "2020-07-15T18:16:11.17106713Z",
+				"is_permanent": false
+			}
+		},
+		{
+			"type": "channel.bits.use",
+			"name": "Channel Bits Use",
+			"version": "1",
+			"description": "A notification is sent whenever Bits are used on a channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"bits": 2,
+				"type": "cheer",
+				"power_up": null,
+				"custom_power_up": null,
+				"message": {
+					"text": "cheer1 hi cheer1",
+					"fragments": [
+						{
+							"type": "cheermote",
+							"text": "cheer1",
+							"cheermote": {
+								"prefix": "cheer",
+								"bits": 1,
+								"tier": 1
+							},
+							"emote": null
+						},
+						{
+							"type": "text",
+							"text": " hi ",
+							"cheermote": null,
+							"emote": null
+						},
+						{
+							"type": "cheermote",
+							"text": "cheer1",
+							"cheermote": {
+								"prefix": "cheer",
+								"bits": 1,
+								"tier": 1
+							},
+							"emote": null
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "channel.channel_points_automatic_reward_redemption.add",
+			"name": "Channel Points Automatic Reward Redemption Add",
+			"version": "1",
+			"description": "A viewer has redeemed an automatic channel points reward on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"id": "f024099a-e0fe-4339-9a0a-a706fb59f353",
+				"reward": {
+					"type": "send_highlighted_message",
+					"cost": 100,
+					"unlocked_emote": null
+				},
+				"message": {
+					"text": "Hello world! VoHiYo",
+					"emotes": [
+						{
+							"id": "81274",
+							"begin": 13,
+							"end": 18
+						}
+					]
+				},
+				"user_input": "Hello world! VoHiYo ",
+				"redeemed_at": "2024-02-23T21:14:34.260398045Z"
+			}
+		},
+		{
+			"type": "channel.channel_points_automatic_reward_redemption.add",
+			"name": "Channel Points Automatic Reward Redemption Add V2",
+			"version": "2",
+			"description": "A viewer has redeemed an automatic channel points reward on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"id": "f024099a-e0fe-4339-9a0a-a706fb59f353",
+				"reward": {
+					"type": "send_highlighted_message",
+					"channel_points": 100,
+					"emote": null
+				},
+				"message": {
+					"text": "Hello world! VoHiYo",
+					"fragments": [
+						{
+							"type": "text",
+							"text": "Hello world! ",
+							"emote": null
+						},
+						{
+							"type": "emote",
+							"text": "VoHiYo",
+							"emote": {
+								"id": "81274"
+							}
+						}
+					]
+				},
+				"redeemed_at": "2024-08-12T21:14:34.260398045Z"
+			}
+		},
+		{
+			"type": "channel.channel_points_custom_reward_redemption.add",
+			"name": "Channel Points Custom Reward Redemption Add",
+			"version": "1",
+			"description": "A viewer has redeemed a custom channel points reward on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"reward_id": "92af127c-7326-4483-a52b-b0da0be61c01"
+			},
+			"event": {
+				"id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"user_input": "pogchamp",
+				"status": "unfulfilled",
+				"reward": {
+					"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+					"title": "title",
+					"cost": 100,
+					"prompt": "reward prompt"
+				},
+				"redeemed_at": "2020-07-15T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.channel_points_custom_reward_redemption.update",
+			"name": "Channel Points Custom Reward Redemption Update",
+			"version": "1",
+			"description": "A redemption of a channel points custom reward has been updated for the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"reward_id": "92af127c-7326-4483-a52b-b0da0be61c01"
+			},
+			"event": {
+				"id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"user_input": "pogchamp",
+				"status": "fulfilled",
+				"reward": {
+					"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+					"title": "title",
+					"cost": 100,
+					"prompt": "reward prompt"
+				},
+				"redeemed_at": "2020-07-15T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.channel_points_custom_reward.add",
+			"name": "Channel Points Custom Reward Add",
+			"version": "1",
+			"description": "A custom channel points reward has been created for the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "9001",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"is_enabled": true,
+				"is_paused": false,
+				"is_in_stock": true,
+				"title": "Cool Reward",
+				"cost": 100,
+				"prompt": "reward prompt",
+				"is_user_input_required": true,
+				"should_redemptions_skip_request_queue": false,
+				"cooldown_expires_at": null,
+				"redemptions_redeemed_current_stream": null,
+				"max_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"max_per_user_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"global_cooldown": {
+					"is_enabled": true,
+					"seconds": 1000
+				},
+				"background_color": "#FA1ED2",
+				"image": {
+					"url_1x": "https://static-cdn.jtvnw.net/image-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/image-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/image-4.png"
+				},
+				"default_image": {
+					"url_1x": "https://static-cdn.jtvnw.net/default-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/default-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/default-4.png"
+				}
+			}
+		},
+		{
+			"type": "channel.channel_points_custom_reward.remove",
+			"name": "Channel Points Custom Reward Remove",
+			"version": "1",
+			"description": "A custom channel points reward has been removed from the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"reward_id": "9001"
+			},
+			"event": {
+				"id": "9001",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"is_enabled": true,
+				"is_paused": false,
+				"is_in_stock": true,
+				"title": "Cool Reward",
+				"cost": 100,
+				"prompt": "reward prompt",
+				"is_user_input_required": true,
+				"should_redemptions_skip_request_queue": false,
+				"cooldown_expires_at": "2019-11-16T10:11:12.123Z",
+				"redemptions_redeemed_current_stream": 123,
+				"max_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"max_per_user_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"global_cooldown": {
+					"is_enabled": true,
+					"seconds": 1000
+				},
+				"background_color": "#FA1ED2",
+				"image": {
+					"url_1x": "https://static-cdn.jtvnw.net/image-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/image-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/image-4.png"
+				},
+				"default_image": {
+					"url_1x": "https://static-cdn.jtvnw.net/default-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/default-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/default-4.png"
+				}
+			}
+		},
+		{
+			"type": "channel.channel_points_custom_reward.update",
+			"name": "Channel Points Custom Reward Update",
+			"version": "1",
+			"description": "A custom channel points reward has been updated for the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"reward_id": "9001"
+			},
+			"event": {
+				"id": "9001",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"is_enabled": true,
+				"is_paused": false,
+				"is_in_stock": true,
+				"title": "Cool Reward",
+				"cost": 100,
+				"prompt": "reward prompt",
+				"is_user_input_required": true,
+				"should_redemptions_skip_request_queue": false,
+				"cooldown_expires_at": "2019-11-16T10:11:12.634234626Z",
+				"redemptions_redeemed_current_stream": 123,
+				"max_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"max_per_user_per_stream": {
+					"is_enabled": true,
+					"value": 1000
+				},
+				"global_cooldown": {
+					"is_enabled": true,
+					"seconds": 1000
+				},
+				"background_color": "#FA1ED2",
+				"image": {
+					"url_1x": "https://static-cdn.jtvnw.net/image-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/image-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/image-4.png"
+				},
+				"default_image": {
+					"url_1x": "https://static-cdn.jtvnw.net/default-1.png",
+					"url_2x": "https://static-cdn.jtvnw.net/default-2.png",
+					"url_4x": "https://static-cdn.jtvnw.net/default-4.png"
+				}
+			}
+		},
+		{
+			"type": "channel.charity_campaign.donate",
+			"name": "Charity Donation",
+			"version": "1",
+			"description": "Sends an event notification when a user donates to the broadcaster’s charity campaign.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "a1b2c3-aabb-4455-d1e2f3",
+				"campaign_id": "123-abc-456-def",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"charity_name": "Viewer",
+				"charity_description": "Example description",
+				"charity_logo": "https://abc.cloudfront.net/ppgf/1000/100.png",
+				"charity_website": "https://www.example.com",
+				"amount": {
+					"value": 10000,
+					"decimal_places": 2,
+					"currency": "USD"
+				}
+			}
+		},
+		{
+			"type": "channel.charity_campaign.progress",
+			"name": "Charity Campaign Progress",
+			"version": "1",
+			"description": "Sends an event notification when progress is made towards the campaign’s goal or when the broadcaster changes the fundraising goal.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "123-abc-456-def",
+				"broadcaster_id": "12345",
+				"broadcaster_name": "MockStreamer",
+				"broadcaster_login": "mockstreamer",
+				"charity_name": "Viewer",
+				"charity_description": "Example description",
+				"charity_logo": "https://abc.cloudfront.net/ppgf/1000/100.png",
+				"charity_website": "https://www.example.com",
+				"current_amount": {
+					"value": 260000,
+					"decimal_places": 2,
+					"currency": "USD"
+				},
+				"target_amount": {
+					"value": 1500000,
+					"decimal_places": 2,
+					"currency": "USD"
+				}
+			}
+		},
+		{
+			"type": "channel.charity_campaign.start",
+			"name": "Charity Campaign Start",
+			"version": "1",
+			"description": "Sends an event notification when the broadcaster starts a charity campaign.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "123-abc-456-def",
+				"broadcaster_id": "12345",
+				"broadcaster_name": "MockStreamer",
+				"broadcaster_login": "mockstreamer",
+				"charity_name": "Viewer",
+				"charity_description": "Example description",
+				"charity_logo": "https://abc.cloudfront.net/ppgf/1000/100.png",
+				"charity_website": "https://www.example.com",
+				"current_amount": {
+					"value": 0,
+					"decimal_places": 2,
+					"currency": "USD"
+				},
+				"target_amount": {
+					"value": 1500000,
+					"decimal_places": 2,
+					"currency": "USD"
+				},
+				"started_at": "2022-07-26T17:00:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.charity_campaign.stop",
+			"name": "Charity Campaign Stop",
+			"version": "1",
+			"description": "Sends an event notification when the broadcaster stops a charity campaign.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "123-abc-456-def",
+				"broadcaster_id": "12345",
+				"broadcaster_name": "MockStreamer",
+				"broadcaster_login": "mockstreamer",
+				"charity_name": "Viewer",
+				"charity_description": "Example description",
+				"charity_logo": "https://abc.cloudfront.net/ppgf/1000/100.png",
+				"charity_website": "https://www.example.com",
+				"current_amount": {
+					"value": 1450000,
+					"decimal_places": 2,
+					"currency": "USD"
+				},
+				"target_amount": {
+					"value": 1500000,
+					"decimal_places": 2,
+					"currency": "USD"
+				},
+				"stopped_at": "2022-07-26T22:00:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.chat_settings.update",
+			"name": "Channel Chat Settings Update",
+			"version": "1",
+			"description": "A notification for when a broadcaster’s chat settings are updated.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"emote_mode": true,
+				"follower_mode": false,
+				"follower_mode_duration_minutes": null,
+				"slow_mode": true,
+				"slow_mode_wait_time_seconds": 10,
+				"subscriber_mode": false,
+				"unique_chat_mode": false
+			}
+		},
+		{
+			"type": "channel.chat.clear",
+			"name": "Channel Chat Clear",
+			"version": "1",
+			"description": "A moderator or bot has cleared all messages from the chat room.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer"
+			}
+		},
+		{
+			"type": "channel.chat.clear_user_messages",
+			"name": "Channel Chat Clear User Messages",
+			"version": "1",
+			"description": "A moderator or bot has cleared all messages from a specific user.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"target_user_id": "99998",
+				"target_user_name": "TargetUser",
+				"target_user_login": "targetuser"
+			}
+		},
+		{
+			"type": "channel.chat.message",
+			"name": "Channel Chat Message",
+			"version": "1",
+			"description": "Any user sends a message to a specific chat room.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"chatter_user_id": "99999",
+				"chatter_user_login": "viewer",
+				"chatter_user_name": "Viewer",
+				"message_id": "cc106a89-1814-919d-454c-f4f2f970aae7",
+				"message": {
+					"text": "Hi chat",
+					"fragments": [
+						{
+							"type": "text",
+							"text": "Hi chat",
+							"cheermote": null,
+							"emote": null,
+							"mention": null
+						}
+					]
+				},
+				"color": "#00FF7F",
+				"badges": [
+					{
+						"set_id": "moderator",
+						"id": "1",
+						"info": ""
+					},
+					{
+						"set_id": "subscriber",
+						"id": "12",
+						"info": "16"
+					},
+					{
+						"set_id": "sub-gifter",
+						"id": "1",
+						"info": ""
+					}
+				],
+				"message_type": "text",
+				"cheer": null,
+				"reply": null,
+				"channel_points_custom_reward_id": null,
+				"source_broadcaster_user_id": null,
+				"source_broadcaster_user_login": null,
+				"source_broadcaster_user_name": null,
+				"source_message_id": null,
+				"source_badges": null
+			}
+		},
+		{
+			"type": "channel.chat.message_delete",
+			"name": "Channel Chat Message Delete",
+			"version": "1",
+			"description": "A moderator has removed a specific message.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"target_user_id": "99998",
+				"target_user_name": "TargetUser",
+				"target_user_login": "targetuser",
+				"message_id": "ab24e0b0-2260-4bac-94e4-05eedd4ecd0e"
+			}
+		},
+		{
+			"type": "channel.chat.notification",
+			"name": "Channel Chat Notification",
+			"version": "1",
+			"description": "A notification for when an event that appears in chat has occurred.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"chatter_user_id": "99999",
+				"chatter_user_login": "viewer",
+				"chatter_user_name": "Viewer",
+				"chatter_is_anonymous": false,
+				"color": "",
+				"badges": [],
+				"system_message": "viewer23 subscribed at Tier 1. They've subscribed for 10 months!",
+				"message_id": "d62235c8-47ff-a4f4--84e8-5a29a65a9c03",
+				"message": {
+					"text": "",
+					"fragments": []
+				},
+				"notice_type": "resub",
+				"sub": null,
+				"resub": {
+					"cumulative_months": 10,
+					"duration_months": 0,
+					"streak_months": null,
+					"sub_plan": "1000",
+					"is_gift": false,
+					"gifter_is_anonymous": null,
+					"gifter_user_id": null,
+					"gifter_user_name": null,
+					"gifter_user_login": null
+				},
+				"sub_gift": null,
+				"community_sub_gift": null,
+				"gift_paid_upgrade": null,
+				"prime_paid_upgrade": null,
+				"pay_it_forward": null,
+				"raid": null,
+				"unraid": null,
+				"announcement": null,
+				"bits_badge_tier": null,
+				"charity_donation": null,
+				"watch_streak": null,
+				"modiversary": null,
+				"shared_chat_sub": null,
+				"shared_chat_resub": null,
+				"shared_chat_sub_gift": null,
+				"shared_chat_community_sub_gift": null,
+				"shared_chat_gift_paid_upgrade": null,
+				"shared_chat_prime_paid_upgrade": null,
+				"shared_chat_pay_it_forward": null,
+				"shared_chat_raid": null,
+				"shared_chat_announcement": null,
+				"shared_chat_modiversary": null,
+				"source_broadcaster_user_id": null,
+				"source_broadcaster_user_login": null,
+				"source_broadcaster_user_name": null,
+				"source_message_id": null,
+				"source_badges": null,
+				"is_source_only": null
+			}
+		},
+		{
+			"type": "channel.chat.user_message_hold",
+			"name": "Channel Chat User Message Hold",
+			"version": "1",
+			"description": "A user is notified if their message is caught by automod.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"message_id": "789",
+				"message": {
+					"text": "hey world",
+					"fragments": [
+						{
+							"type": "emote",
+							"text": "hey world",
+							"cheermote": null,
+							"emote": {
+								"id": "foo",
+								"emote_set_id": "7"
+							}
+						},
+						{
+							"type": "cheermote",
+							"text": "bye world",
+							"cheermote": {
+								"prefix": "prefix",
+								"bits": 100,
+								"tier": 1
+							},
+							"emote": null
+						},
+						{
+							"type": "text",
+							"text": "surprise",
+							"cheermote": null,
+							"emote": null
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "channel.chat.user_message_update",
+			"name": "Channel Chat User Message Update",
+			"version": "1",
+			"description": "A user is notified if their message’s automod status is updated.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"user_id": "99999"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"status": "approved",
+				"message_id": "789",
+				"message": {
+					"text": "hey world",
+					"fragments": [
+						{
+							"type": "emote",
+							"text": "hey world",
+							"cheermote": null,
+							"emote": {
+								"id": "foo",
+								"emote_set_id": "7"
+							}
+						},
+						{
+							"type": "cheermote",
+							"text": "bye world",
+							"cheermote": {
+								"prefix": "prefix",
+								"bits": 100,
+								"tier": 1
+							},
+							"emote": null
+						},
+						{
+							"type": "text",
+							"text": "surprise",
+							"cheermote": null,
+							"emote": null
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "channel.cheer",
+			"name": "Channel Cheer",
+			"version": "1",
+			"description": "A user cheers on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"is_anonymous": false,
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"message": "pogchamp",
+				"bits": 1000
+			}
+		},
+		{
+			"type": "channel.custom_power_up_redemption.add",
+			"name": "Channel Custom Power-ups Redemption Add",
+			"version": "1",
+			"description": "A viewer has redeemed a custom Power-up on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"reward_id": "92af127c-7326-4483-a52b-b0da0be61c01"
+			},
+			"event": {
+				"id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"user_input": "pogchamp",
+				"status": "unfulfilled",
+				"custom_power_up": {
+					"id": "92af127c-7326-4483-a52b-b0da0be61c01",
+					"title": "title",
+					"bits": 100,
+					"prompt": "Power-up prompt"
+				},
+				"redeemed_at": "2026-05-01T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.follow",
+			"name": "Channel Follow",
+			"version": "2",
+			"description": "A specified channel receives a follow.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"followed_at": "2020-07-15T18:16:11.17106713Z"
+			}
+		},
+		{
+			"type": "channel.goal.begin",
+			"name": "Goal Begin",
+			"version": "1",
+			"description": "Get notified when a broadcaster begins a goal.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "12345-cool-event",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"type": "subscription",
+				"description": "Help me get partner!",
+				"current_amount": 100,
+				"target_amount": 220,
+				"started_at": "2021-07-15T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.goal.end",
+			"name": "Goal End",
+			"version": "1",
+			"description": "Get notified when a broadcaster ends a goal.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "12345-abc-678-defgh",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"type": "subscription",
+				"description": "Help me get partner!",
+				"is_achieved": false,
+				"current_amount": 180,
+				"target_amount": 220,
+				"started_at": "2021-07-15T17:16:03.17106713Z",
+				"ended_at": "2020-07-16T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.goal.progress",
+			"name": "Goal Progress",
+			"version": "1",
+			"description": "Get notified when progress (either positive or negative) is made towards a broadcaster’s goal.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "12345-cool-event",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"type": "subscription",
+				"description": "Help me get partner!",
+				"current_amount": 120,
+				"target_amount": 220,
+				"started_at": "2021-07-15T17:16:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.guest_star_guest.update",
+			"name": "Channel Guest Star Guest Update",
+			"version": "beta",
+			"description": "A guest or a slot is updated in an active Guest Star session.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"session_id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"guest_user_id": "99997",
+				"guest_user_name": "GuestUser",
+				"guest_user_login": "guestuser",
+				"slot_id": "1",
+				"state": "live",
+				"host_video_enabled": true,
+				"host_audio_enabled": true,
+				"host_volume": 100
+			}
+		},
+		{
+			"type": "channel.guest_star_session.begin",
+			"name": "Channel Guest Star Session Begin",
+			"version": "beta",
+			"description": "The host began a new Guest Star session.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"session_id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+				"started_at": "2023-04-11T16:20:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.guest_star_session.end",
+			"name": "Channel Guest Star Session End",
+			"version": "beta",
+			"description": "A running Guest Star session has ended.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"session_id": "2KFRQbFtpmfyD3IevNRnCzOPRJI",
+				"started_at": "2023-04-11T16:20:03.17106713Z",
+				"ended_at": "2023-04-11T17:51:29.153485Z"
+			}
+		},
+		{
+			"type": "channel.guest_star_settings.update",
+			"name": "Channel Guest Star Settings Update",
+			"version": "beta",
+			"description": "The host preferences for Guest Star have been updated.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"is_moderator_send_live_enabled": true,
+				"slot_count": 5,
+				"is_browser_source_audio_enabled": true,
+				"group_layout": "tiled"
+			}
+		},
+		{
+			"type": "channel.hype_train.begin",
+			"name": "Hype Train Begin",
+			"version": "2",
+			"description": "A Hype Train begins on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1b0AsbInCHZW2SQFQkCzqN07Ib2",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"total": 137,
+				"progress": 137,
+				"goal": 500,
+				"top_contributions": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"type": "bits",
+						"total": 50
+					}
+				],
+				"shared_train_participants": null,
+				"level": 1,
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"expires_at": "2020-07-15T17:16:11.17106713Z",
+				"is_shared_train": false,
+				"type": "regular",
+				"all_time_high_level": 4,
+				"all_time_high_total": 2845
+			}
+		},
+		{
+			"type": "channel.hype_train.end",
+			"name": "Hype Train End",
+			"version": "2",
+			"description": "A Hype Train ends on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1b0AsbInCHZW2SQFQkCzqN07Ib2",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"total": 137,
+				"top_contributions": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"type": "bits",
+						"total": 50
+					}
+				],
+				"shared_train_participants": null,
+				"level": 1,
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"ended_at": "2020-07-15T17:16:11.17106713Z",
+				"cooldown_ends_at": "2020-07-16T17:16:11.17106713Z",
+				"is_shared_train": false,
+				"type": "regular"
+			}
+		},
+		{
+			"type": "channel.hype_train.progress",
+			"name": "Hype Train Progress",
+			"version": "2",
+			"description": "A Hype Train makes progress on the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1b0AsbInCHZW2SQFQkCzqN07Ib2",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"total": 137,
+				"progress": 137,
+				"goal": 500,
+				"top_contributions": [
+					{
+						"user_id": "99999",
+						"user_login": "viewer",
+						"user_name": "Viewer",
+						"type": "bits",
+						"total": 50
+					}
+				],
+				"shared_train_participants": null,
+				"level": 1,
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"expires_at": "2020-07-15T17:16:11.17106713Z",
+				"is_shared_train": false,
+				"type": "regular"
+			}
+		},
+		{
+			"type": "channel.moderate",
+			"name": "Channel Moderate",
+			"version": "1",
+			"description": "A moderator performs a moderation action in a channel.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"action": "mod",
+				"followers": null,
+				"slow": null,
+				"vip": null,
+				"unvip": null,
+				"mod": {
+					"user_id": "99999",
+					"user_login": "viewer",
+					"user_name": "Viewer"
+				},
+				"unmod": null,
+				"ban": null,
+				"unban": null,
+				"timeout": null,
+				"untimeout": null,
+				"raid": null,
+				"unraid": null,
+				"delete": null,
+				"automod_terms": null,
+				"unban_request": null,
+				"shared_chat_ban": null,
+				"shared_chat_unban": null,
+				"shared_chat_timeout": null,
+				"shared_chat_untimeout": null,
+				"shared_chat_delete": null
+			}
+		},
+		{
+			"type": "channel.moderate",
+			"name": "Channel Moderate V2",
+			"version": "2",
+			"description": "A moderator performs a moderation action in a channel. Includes warnings.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"source_broadcaster_user_id": "12345",
+				"source_broadcaster_user_login": "mockstreamer",
+				"source_broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"action": "warn",
+				"followers": null,
+				"slow": null,
+				"vip": null,
+				"unvip": null,
+				"warn": {
+					"user_id": "99999",
+					"user_login": "viewer",
+					"user_name": "Viewer",
+					"reason": "cut it out",
+					"chat_rules_cited": null
+				},
+				"unmod": null,
+				"ban": null,
+				"unban": null,
+				"timeout": null,
+				"untimeout": null,
+				"raid": null,
+				"unraid": null,
+				"delete": null,
+				"automod_terms": null,
+				"unban_request": null,
+				"shared_chat_ban": null,
+				"shared_chat_unban": null,
+				"shared_chat_timeout": null,
+				"shared_chat_untimeout": null,
+				"shared_chat_delete": null
+			}
+		},
+		{
+			"type": "channel.moderator.add",
+			"name": "Channel Moderator Add",
+			"version": "1",
+			"description": "Moderator privileges were added to a user on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "channel.moderator.remove",
+			"name": "Channel Moderator Remove",
+			"version": "1",
+			"description": "Moderator privileges were removed from a user on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "channel.poll.begin",
+			"name": "Channel Poll Begin",
+			"version": "1",
+			"description": "A poll started on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"choices": [
+					{
+						"id": "123",
+						"title": "Yeah!"
+					},
+					{
+						"id": "124",
+						"title": "No!"
+					},
+					{
+						"id": "125",
+						"title": "Maybe!"
+					}
+				],
+				"bits_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"channel_points_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"ends_at": "2020-07-15T17:16:08.17106713Z"
+			}
+		},
+		{
+			"type": "channel.poll.end",
+			"name": "Channel Poll End",
+			"version": "1",
+			"description": "A poll ended on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"choices": [
+					{
+						"id": "123",
+						"title": "Blue",
+						"bits_votes": 50,
+						"channel_points_votes": 70,
+						"votes": 120
+					},
+					{
+						"id": "124",
+						"title": "Yellow",
+						"bits_votes": 100,
+						"channel_points_votes": 40,
+						"votes": 140
+					},
+					{
+						"id": "125",
+						"title": "Green",
+						"bits_votes": 10,
+						"channel_points_votes": 70,
+						"votes": 80
+					}
+				],
+				"bits_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"channel_points_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"status": "completed",
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"ended_at": "2020-07-15T17:16:11.17106713Z"
+			}
+		},
+		{
+			"type": "channel.poll.progress",
+			"name": "Channel Poll Progress",
+			"version": "1",
+			"description": "Users respond to a poll on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"choices": [
+					{
+						"id": "123",
+						"title": "Yeah!",
+						"bits_votes": 5,
+						"channel_points_votes": 7,
+						"votes": 12
+					},
+					{
+						"id": "124",
+						"title": "No!",
+						"bits_votes": 10,
+						"channel_points_votes": 4,
+						"votes": 14
+					},
+					{
+						"id": "125",
+						"title": "Maybe!",
+						"bits_votes": 0,
+						"channel_points_votes": 7,
+						"votes": 7
+					}
+				],
+				"bits_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"channel_points_voting": {
+					"is_enabled": true,
+					"amount_per_vote": 10
+				},
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"ends_at": "2020-07-15T17:16:08.17106713Z"
+			}
+		},
+		{
+			"type": "channel.prediction.begin",
+			"name": "Channel Prediction Begin",
+			"version": "1",
+			"description": "A Prediction started on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"outcomes": [
+					{
+						"id": "1243456",
+						"title": "Yeah!",
+						"color": "blue"
+					},
+					{
+						"id": "2243456",
+						"title": "No!",
+						"color": "pink"
+					}
+				],
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"locks_at": "2020-07-15T17:21:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.prediction.end",
+			"name": "Channel Prediction End",
+			"version": "1",
+			"description": "A Prediction ended on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"winning_outcome_id": "12345",
+				"outcomes": [
+					{
+						"id": "12345",
+						"title": "Yeah!",
+						"color": "blue",
+						"users": 2,
+						"channel_points": 15000,
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": 10000,
+								"channel_points_used": 500
+							},
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": 5000,
+								"channel_points_used": 100
+							}
+						]
+					},
+					{
+						"id": "22435",
+						"title": "No!",
+						"users": 2,
+						"channel_points": 200,
+						"color": "pink",
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": 12345,
+								"channel_points_won": null,
+								"channel_points_used": 100
+							},
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": 1337,
+								"channel_points_won": null,
+								"channel_points_used": 100
+							}
+						]
+					}
+				],
+				"status": "resolved",
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"ended_at": "2020-07-15T17:16:11.17106713Z"
+			}
+		},
+		{
+			"type": "channel.prediction.lock",
+			"name": "Channel Prediction Lock",
+			"version": "1",
+			"description": "A Prediction was locked on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"outcomes": [
+					{
+						"id": "1243456",
+						"title": "Yeah!",
+						"color": "blue",
+						"users": 10,
+						"channel_points": 15000,
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": null,
+								"channel_points_used": 500
+							},
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": null,
+								"channel_points_used": 200
+							}
+						]
+					},
+					{
+						"id": "2243456",
+						"title": "No!",
+						"color": "pink",
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": 12345,
+								"channel_points_won": null,
+								"channel_points_used": 5000
+							}
+						]
+					}
+				],
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"locked_at": "2020-07-15T17:21:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.prediction.progress",
+			"name": "Channel Prediction Progress",
+			"version": "1",
+			"description": "Users participated in a Prediction on a specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "1243456",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Aren’t shoes just really hard socks?",
+				"outcomes": [
+					{
+						"id": "1243456",
+						"title": "Yeah!",
+						"color": "blue",
+						"users": 10,
+						"channel_points": 15000,
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": null,
+								"channel_points_used": 500
+							},
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": "99999",
+								"channel_points_won": null,
+								"channel_points_used": 200
+							}
+						]
+					},
+					{
+						"id": "2243456",
+						"title": "No!",
+						"color": "pink",
+						"top_predictors": [
+							{
+								"user_name": "Viewer",
+								"user_login": "viewer",
+								"user_id": 12345,
+								"channel_points_won": null,
+								"channel_points_used": 5000
+							}
+						]
+					}
+				],
+				"started_at": "2020-07-15T17:16:03.17106713Z",
+				"locks_at": "2020-07-15T17:21:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.raid",
+			"name": "Channel Raid",
+			"version": "1",
+			"description": "A broadcaster raids another broadcaster’s channel.",
+			"condition": {
+				"to_broadcaster_user_id": "12345"
+			},
+			"event": {
+				"from_broadcaster_user_id": "12345",
+				"from_broadcaster_user_login": "mockstreamer",
+				"from_broadcaster_user_name": "MockStreamer",
+				"to_broadcaster_user_id": "12345",
+				"to_broadcaster_user_login": "mockstreamer",
+				"to_broadcaster_user_name": "MockStreamer",
+				"viewers": 9001
+			}
+		},
+		{
+			"type": "channel.shared_chat.begin",
+			"name": "Channel Shared Chat Session Begin",
+			"version": "1",
+			"description": "A notification when a channel becomes active in an active shared chat session.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"session_id": "2b64a92a-dbb8-424e-b1c3-304423ba1b6f",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"host_broadcaster_user_id": "12345",
+				"host_broadcaster_user_login": "mockstreamer",
+				"host_broadcaster_user_name": "MockStreamer",
+				"participants": [
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer"
+					},
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer"
+					}
+				]
+			}
+		},
+		{
+			"type": "channel.shared_chat.end",
+			"name": "Channel Shared Chat Session End",
+			"version": "1",
+			"description": "A notification when a channel leaves a shared chat session or the session ends.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"session_id": "2b64a92a-dbb8-424e-b1c3-304423ba1b6f",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"host_broadcaster_user_id": "12345",
+				"host_broadcaster_user_login": "mockstreamer",
+				"host_broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "channel.shared_chat.update",
+			"name": "Channel Shared Chat Session Update",
+			"version": "1",
+			"description": "A notification when the active shared chat session the channel is in changes.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"session_id": "2b64a92a-dbb8-424e-b1c3-304423ba1b6f",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"host_broadcaster_user_id": "12345",
+				"host_broadcaster_user_login": "mockstreamer",
+				"host_broadcaster_user_name": "MockStreamer",
+				"participants": [
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer"
+					},
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer"
+					},
+					{
+						"broadcaster_user_id": "12345",
+						"broadcaster_user_name": "MockStreamer",
+						"broadcaster_user_login": "mockstreamer"
+					}
+				]
+			}
+		},
+		{
+			"type": "channel.shield_mode.begin",
+			"name": "Shield Mode Begin",
+			"version": "1",
+			"description": "Sends a notification when the broadcaster activates Shield Mode.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"started_at": "2022-07-26T17:00:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.shield_mode.end",
+			"name": "Shield Mode End",
+			"version": "1",
+			"description": "Sends a notification when the broadcaster deactivates Shield Mode.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"ended_at": "2022-07-27T01:30:23.17106713Z"
+			}
+		},
+		{
+			"type": "channel.shoutout.create",
+			"name": "Shoutout Create",
+			"version": "1",
+			"description": "Sends a notification when the specified broadcaster sends a Shoutout.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"to_broadcaster_user_id": "12345",
+				"to_broadcaster_user_name": "MockStreamer",
+				"to_broadcaster_user_login": "mockstreamer",
+				"started_at": "2022-07-26T17:00:03.17106713Z",
+				"viewer_count": 860,
+				"cooldown_ends_at": "2022-07-26T17:02:03.17106713Z",
+				"target_cooldown_ends_at": "2022-07-26T18:00:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.shoutout.receive",
+			"name": "Shoutout Received",
+			"version": "1",
+			"description": "Sends a notification when the specified broadcaster receives a Shoutout.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"from_broadcaster_user_id": "12345",
+				"from_broadcaster_user_name": "MockStreamer",
+				"from_broadcaster_user_login": "mockstreamer",
+				"viewer_count": 860,
+				"started_at": "2022-07-26T17:00:03.17106713Z"
+			}
+		},
+		{
+			"type": "channel.subscribe",
+			"name": "Channel Subscribe",
+			"version": "1",
+			"description": "A notification is sent when a specified channel receives a subscriber. This does not include resubscribes.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"tier": "1000",
+				"is_gift": false
+			}
+		},
+		{
+			"type": "channel.subscription.end",
+			"name": "Channel Subscription End",
+			"version": "1",
+			"description": "A notification when a subscription to the specified channel ends.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"tier": "1000",
+				"is_gift": false
+			}
+		},
+		{
+			"type": "channel.subscription.gift",
+			"name": "Channel Subscription Gift",
+			"version": "1",
+			"description": "A notification when a viewer gives a gift subscription to one or more users in the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"total": 2,
+				"tier": "1000",
+				"cumulative_total": 284,
+				"is_anonymous": false
+			}
+		},
+		{
+			"type": "channel.subscription.message",
+			"name": "Channel Subscription Message",
+			"version": "1",
+			"description": "A notification when a user sends a resubscription chat message in a specific channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"tier": "1000",
+				"message": {
+					"text": "Love the stream! FevziGG",
+					"emotes": [
+						{
+							"begin": 23,
+							"end": 30,
+							"id": "302976485"
+						}
+					]
+				},
+				"cumulative_months": 15,
+				"streak_months": 1,
+				"duration_months": 6
+			}
+		},
+		{
+			"type": "channel.suspicious_user.message",
+			"name": "Channel Suspicious User Message",
+			"version": "1",
+			"description": "A chat message has been sent by a suspicious user.",
+			"condition": {
+				"moderator_user_id": "67890",
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"low_trust_status": "active_monitoring",
+				"shared_ban_channel_ids": [
+					"100",
+					"200"
+				],
+				"types": [
+					"ban_evader"
+				],
+				"ban_evasion_evaluation": "likely",
+				"message": {
+					"message_id": "101010",
+					"text": "bad stuff pogchamp",
+					"fragments": [
+						{
+							"type": "emote",
+							"text": "bad stuff",
+							"cheermote": null,
+							"emote": {
+								"id": "899",
+								"emote_set_id": "1"
+							}
+						},
+						{
+							"type": "cheermote",
+							"text": "pogchamp",
+							"cheermote": {
+								"prefix": "pogchamp",
+								"bits": 100,
+								"tier": 1
+							},
+							"emote": null
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "channel.suspicious_user.update",
+			"name": "Channel Suspicious User Update",
+			"version": "1",
+			"description": "A suspicious user has been updated.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_name": "MockStreamer",
+				"broadcaster_user_login": "mockstreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_name": "MockBot",
+				"moderator_user_login": "mockbot",
+				"user_id": "99999",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"low_trust_status": "restricted"
+			}
+		},
+		{
+			"type": "channel.unban",
+			"name": "Channel Unban",
+			"version": "1",
+			"description": "A viewer is unbanned from the specified channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot"
+			}
+		},
+		{
+			"type": "channel.unban_request.create",
+			"name": "Channel Unban Request Create",
+			"version": "1",
+			"description": "A user creates an unban request.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"id": "60",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"text": "unban me",
+				"created_at": "2023-11-16T10:11:12.634234626Z"
+			}
+		},
+		{
+			"type": "channel.unban_request.resolve",
+			"name": "Channel Unban Request Resolve",
+			"version": "1",
+			"description": "An unban request has been resolved.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"id": "60",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"resolution_text": "no",
+				"status": "denied"
+			}
+		},
+		{
+			"type": "channel.update",
+			"name": "Channel Update",
+			"version": "2",
+			"description": "A broadcaster updates their channel properties *e.g.*, category, title, content classification labels, broadcast, or language.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"title": "Best Stream Ever",
+				"language": "en",
+				"category_id": "12453",
+				"category_name": "Viewer",
+				"content_classification_labels": [
+					"MatureGame"
+				]
+			}
+		},
+		{
+			"type": "channel.vip.add",
+			"name": "Channel VIP Add",
+			"version": "1",
+			"description": "A VIP is added to the channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "channel.vip.remove",
+			"name": "Channel VIP Remove",
+			"version": "1",
+			"description": "A VIP is removed from the channel.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "channel.warning.acknowledge",
+			"name": "Channel Warning Acknowledgement",
+			"version": "1",
+			"description": "A user acknowledges a warning. Broadcasters and moderators can see the warning’s details.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer"
+			}
+		},
+		{
+			"type": "channel.warning.send",
+			"name": "Channel Warning Send",
+			"version": "1",
+			"description": "A user is sent a warning. Broadcasters and moderators can see the warning’s details.",
+			"condition": {
+				"broadcaster_user_id": "12345",
+				"moderator_user_id": "67890"
+			},
+			"event": {
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"moderator_user_id": "67890",
+				"moderator_user_login": "mockbot",
+				"moderator_user_name": "MockBot",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"reason": "cut it out",
+				"chat_rules_cited": null
+			}
+		},
+		{
+			"type": "conduit.shard.disabled",
+			"name": "Conduit Shard Disabled",
+			"version": "1",
+			"description": "Sends a notification when EventSub disables a shard due to the status of the underlying transport changing.",
+			"condition": {
+				"client_id": "uo6dggojyb8d6soh92zknwmi5ej1q2"
+			},
+			"event": {
+				"conduit_id": "bfcfc993-26b1-b876-44d9-afe75a379dac",
+				"shard_id": "4",
+				"status": "websocket_disconnected",
+				"transport": {
+					"method": "websocket",
+					"session_id": "ad1c9fc3-0d99-4eb7-8a04-8608e8ff9ec9",
+					"connected_at": "2020-11-10T14:32:18.730260295Z",
+					"disconnected_at": "2020-11-11T14:32:18.730260295Z"
+				}
+			}
+		},
+		{
+			"type": "drop.entitlement.grant",
+			"name": "Drop Entitlement Grant",
+			"version": "1",
+			"description": "An entitlement for a Drop is granted to a user.",
+			"condition": {
+				"organization_id": "9001",
+				"category_id": "9002",
+				"campaign_id": "9003"
+			},
+			"event": {
+				"events": [
+					{
+						"id": "bf7c8577-e3e3-4881-a78a-e9446641d45d",
+						"data": {
+							"organization_id": "9001",
+							"category_id": "9002",
+							"category_name": "Viewer",
+							"campaign_id": "9003",
+							"user_id": "99999",
+							"user_name": "Viewer",
+							"user_login": "viewer",
+							"entitlement_id": "fb78259e-fb81-4d1b-8333-34a06ffc24c0",
+							"benefit_id": "74c52265-e214-48a6-91b9-23b6014e8041",
+							"created_at": "2019-01-28T04:17:53.325Z"
+						}
+					},
+					{
+						"id": "bf7c8577-e3e3-4881-a78a-e9446641d45c",
+						"data": {
+							"organization_id": "9001",
+							"category_id": "9002",
+							"category_name": "Viewer",
+							"campaign_id": "9003",
+							"user_id": "99999",
+							"user_name": "Viewer",
+							"user_login": "viewer",
+							"entitlement_id": "fb78259e-fb81-4d1b-8333-34a06ffc24c0",
+							"benefit_id": "74c52265-e214-48a6-91b9-23b6014e8041",
+							"created_at": "2019-01-28T04:17:53.325Z"
+						}
+					}
+				]
+			}
+		},
+		{
+			"type": "extension.bits_transaction.create",
+			"name": "Extension Bits Transaction Create",
+			"version": "1",
+			"description": "A Bits transaction occurred for a specified Twitch Extension.",
+			"condition": {
+				"extension_client_id": "deadbeef"
+			},
+			"event": {
+				"id": "bits-tx-id",
+				"extension_client_id": "deadbeef",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"user_name": "Viewer",
+				"user_login": "viewer",
+				"user_id": "99999",
+				"product": {
+					"name": "great_product",
+					"sku": "skuskusku",
+					"bits": 1234,
+					"in_development": false
+				}
+			}
+		},
+		{
+			"type": "stream.offline",
+			"name": "Stream Offline",
+			"version": "1",
+			"description": "The specified broadcaster stops a stream.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "9001",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer"
+			}
+		},
+		{
+			"type": "stream.online",
+			"name": "Stream Online",
+			"version": "1",
+			"description": "The specified broadcaster starts a stream.",
+			"condition": {
+				"broadcaster_user_id": "12345"
+			},
+			"event": {
+				"id": "9001",
+				"broadcaster_user_id": "12345",
+				"broadcaster_user_login": "mockstreamer",
+				"broadcaster_user_name": "MockStreamer",
+				"type": "live",
+				"started_at": "2020-10-11T10:11:12.123Z"
+			}
+		},
+		{
+			"type": "user.authorization.grant",
+			"name": "User Authorization Grant",
+			"version": "1",
+			"description": "A user’s authorization has been granted to your client id.",
+			"condition": {
+				"client_id": "1337"
+			},
+			"event": {
+				"client_id": "crq72vsaoijkc83xx42hz6i37",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer"
+			}
+		},
+		{
+			"type": "user.authorization.revoke",
+			"name": "User Authorization Revoke",
+			"version": "1",
+			"description": "A user’s authorization has been revoked for your client id.",
+			"condition": {
+				"client_id": "1337"
+			},
+			"event": {
+				"client_id": "crq72vsaoijkc83xx42hz6i37",
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer"
+			}
+		},
+		{
+			"type": "user.update",
+			"name": "User Update",
+			"version": "1",
+			"description": "A user has updated their account.",
+			"condition": {
+				"user_id": "99999"
+			},
+			"event": {
+				"user_id": "99999",
+				"user_login": "viewer",
+				"user_name": "Viewer",
+				"email": "user@email.com",
+				"email_verified": true,
+				"description": "cool description"
+			}
+		},
+		{
+			"type": "user.whisper.message",
+			"name": "Whisper Received",
+			"version": "1",
+			"description": "A user receives a whisper.",
+			"condition": {
+				"user_id": "99999"
+			},
+			"event": {
+				"from_user_id": "54321",
+				"from_user_login": "raider",
+				"from_user_name": "Raider",
+				"to_user_id": "12345",
+				"to_user_login": "mockstreamer",
+				"to_user_name": "MockStreamer",
+				"whisper_id": "some-whisper-id",
+				"whisper": {
+					"text": "a secret"
+				}
+			}
+		}
+	]
+}

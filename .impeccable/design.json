@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T09:23:47+00:00",
+  "title": "Design System: TwitchMock",
+  "extensions": {
+    "colorMeta": {
+      "chrome": {
+        "role": "neutral",
+        "displayName": "Graphite chrome"
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Graphite page"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Graphite surface"
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised graphite"
+      },
+      "hover": {
+        "role": "neutral",
+        "displayName": "Graphite hover"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Twitch purple"
+      },
+      "success": {
+        "displayName": "Success text"
+      },
+      "error": {
+        "displayName": "Error text"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Page headline",
+        "purpose": "Names the current operating context."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Editable JSON, payloads, and code details."
+      }
+    },
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "navigation-rail",
+        "value": "850px"
+      },
+      {
+        "name": "bottom-navigation",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "description": "Light neutral action; mobile targets grow to 44px.",
+      "html": "<button class=\"ds-primary\">Save changes</button>",
+      "css": ".ds-primary{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:inline-flex;justify-content:center;align-items:center;min-height:36px;padding:8px 12px;border:1px solid #ededed;border-radius:4px;background:var(--text,#ededed);color:#171717;font-size:12px;font-weight:500;line-height:16px;cursor:pointer;}.ds-primary:hover:not(:disabled){background:#d4d4d5;border-color:#d4d4d5}.ds-primary:focus-visible{outline:2px solid var(--accent,#9146ff);outline-offset:2px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}@media(max-width:560px){.ds-primary{min-height:44px;min-width:44px}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "description": "Neutral supporting action.",
+      "html": "<button class=\"ds-secondary\">Refresh</button>",
+      "css": ".ds-secondary{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:inline-flex;justify-content:center;align-items:center;min-height:36px;padding:8px 12px;border:1px solid #ededed;border-radius:4px;background:var(--text,#ededed);color:#171717;font-size:12px;font-weight:500;line-height:16px;cursor:pointer;background:var(--raised,#232325);border-color:#464649;color:var(--text,#ededed)}.ds-secondary:hover:not(:disabled){background:var(--hover,#2b2b2e)}.ds-secondary:focus-visible{outline:2px solid var(--accent,#9146ff);outline-offset:2px}.ds-secondary:disabled{opacity:.5;cursor:not-allowed}@media(max-width:560px){.ds-secondary{min-height:44px;min-width:44px}}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "description": "Quiet action for rows and supporting tools.",
+      "html": "<button class=\"ds-text\">Edit</button>",
+      "css": ".ds-text{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;min-height:32px;min-width:32px;padding:4px 8px;border:0;background:none;color:var(--secondary,#b2b2b6);font-size:12px;cursor:pointer}.ds-text:hover{color:var(--text,#ededed);background:var(--raised,#232325)}.ds-text:focus-visible{outline:2px solid var(--accent,#9146ff);outline-offset:2px}@media(max-width:560px){.ds-text{min-height:44px;min-width:44px}}",
+      "refersTo": "button-text"
+    },
+    {
+      "name": "Labeled field",
+      "kind": "input",
+      "description": "Visible label, neutral stroke, and stronger focus boundary.",
+      "html": "<label class=\"ds-field\"><span>Channel name</span><input placeholder=\"Channel name\" /></label>",
+      "css": ".ds-field{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:grid;gap:8px}.ds-field span{color:var(--secondary,#b2b2b6);font-size:12px;font-weight:500;line-height:16px}.ds-field input{font-family:inherit;width:100%;min-height:36px;padding:8px 12px;border:1px solid #454548;border-radius:4px;background:var(--surface,#19191b);color:var(--text,#ededed);font-size:13px;line-height:20px;outline:none;caret-color:var(--text,#ededed)}.ds-field input::placeholder{color:var(--muted,#96969b);opacity:1}.ds-field input:focus{border-color:#b1b1b5;outline:1px solid #b1b1b5}@media(max-width:560px){.ds-field input{min-height:44px}}",
+      "refersTo": "input"
+    },
+    {
+      "name": "Navigation link",
+      "kind": "nav",
+      "description": "Active desktop row with the shared icon geometry; the shell owns responsive rail placement.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#overview\" aria-current=\"page\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/></svg>Overview</a></nav>",
+      "css": ".ds-nav{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:grid;gap:4px}.ds-nav a{display:flex;align-items:center;gap:8px;min-height:36px;padding:0 8px;border-radius:4px;color:var(--secondary,#b2b2b6);font-size:13px;font-weight:400;text-decoration:none}.ds-nav svg{flex:0 0 16px}.ds-nav a:hover{background:#1c1c1e;color:var(--text,#ededed)}.ds-nav a[aria-current=\"page\"]{background:var(--raised,#232325);color:var(--text,#ededed);font-weight:500}.ds-nav a:focus-visible{outline:2px solid var(--accent,#9146ff);outline-offset:2px}",
+      "refersTo": "navigation-active"
+    },
+    {
+      "name": "Role badge",
+      "kind": "chip",
+      "description": "Quiet data label; it is not an interactive filter.",
+      "html": "<span class=\"ds-badge\">Moderator</span>",
+      "css": ".ds-badge{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:inline-block;padding:0 4px;border-radius:4px;background:var(--raised,#232325);color:var(--secondary,#b2b2b6);font-size:11px;line-height:16px}",
+      "refersTo": "badge"
+    },
+    {
+      "name": "Open panel",
+      "kind": "card",
+      "description": "Open section with a divider rather than a raised card.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-panel-heading\"><h2>Stream state</h2><p>Configure the mock stream</p></div><p class=\"ds-panel-hint\">Changes are reflected in the mock API</p></section>",
+      "css": ".ds-panel{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;min-width:0;padding:20px 0 0;border-top:1px solid var(--border,#ffffff18)}.ds-panel-heading{margin-bottom:20px}.ds-panel-heading h2{margin:0;color:var(--text,#ededed);font-size:14px;font-weight:500;line-height:20px}.ds-panel-heading p{margin:4px 0 0;color:var(--secondary,#b2b2b6);font-size:12px;line-height:20px}.ds-panel-hint{margin:0;color:var(--muted,#96969b);font-size:12px;line-height:20px}@media(max-width:560px){.ds-panel{padding-top:16px}}"
+    },
+    {
+      "name": "State switch",
+      "kind": "input",
+      "description": "Native checkbox styled as the current stream-state toggle.",
+      "html": "<label class=\"ds-switch-row\"><strong>Stream online</strong><input type=\"checkbox\" checked /></label>",
+      "css": ".ds-switch-row{font-family:\"Noto Sans\",sans-serif;font-variant-numeric:tabular-nums;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border,#ffffff18);color:var(--text,#ededed)}.ds-switch-row strong{font-size:12px;font-weight:500;line-height:20px}.ds-switch-row input{appearance:none;width:36px;height:20px;flex:0 0 36px;border-radius:12px;background:#5a5a5e;position:relative;cursor:pointer}.ds-switch-row input:before{content:\"\";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:white}.ds-switch-row input:checked{background:var(--accent,#9146ff)}.ds-switch-row input:checked:before{transform:translateX(16px)}.ds-switch-row input:focus-visible{outline:2px solid var(--accent,#9146ff);outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "overview": "TwitchMock is a compact developer interface for configuring channel state, triggering EventSub events, managing rewards, and simulating chat. Preserve the full operating controls and section order. The content and observable simulation results provide the visual interest.",
+    "keyCharacteristics": [
+      "Graphite surfaces with three text roles",
+      "Rare Twitch accent and restrained semantic status colors",
+      "Flat sections, aligned controls, and a 4px spacing rhythm"
+    ],
+    "dos": [
+      "Do preserve all simulation controls, their behavior, and section order.",
+      "Do use the graphite ramp, three text roles, and the 4px rhythm consistently.",
+      "Do verify keyboard focus, text contrast, and long content at desktop and 320px mobile widths."
+    ],
+    "donts": [
+      "Don't add hue gradients, colored shadows, glows, decorative imagery, or looping motion.",
+      "Don't introduce emoji, unrelated icon sets, heavy headings, uppercase tracked labels, or hype copy.",
+      "Don't replace operating controls with static previews or hide actions to make a layout fit."
+    ]
+  }
+}
