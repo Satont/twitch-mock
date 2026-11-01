@@ -19,5 +19,5 @@ COPY --from=build /app/dist/twitch-mock /usr/local/bin/twitch-mock
 USER twitchmock
 EXPOSE 3333 7777 8081
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD addr="${HTTP_ADDR:-:7777}"; wget -q -O /dev/null "http://127.0.0.1:${addr##*:}/health" || exit 1
+  CMD addr="${HTTP_ADDR:-${PORT:-7777}}"; wget -q -O /dev/null "http://127.0.0.1:${addr##*:}/health" || exit 1
 ENTRYPOINT ["twitch-mock"]

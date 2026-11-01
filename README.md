@@ -35,6 +35,14 @@ The default uses in-memory storage. To persist state between restarts using SQLi
 STORAGE=sqlite docker compose up --build -d
 ```
 
+To use a different OAuth and Helix port, set `PORT` before starting Compose:
+
+```sh
+PORT=7778 docker compose up --build -d
+```
+
+This maps port `7778` on the host to port `7778` in the container. Update Twir's mock API and auth URLs to use the same port.
+
 Compose mounts the `twitch-mock-data` volume at `/data`; the database and its associated SQLite files live there. To use a different OAuth redirect base, set `SITE_BASE_URL` in the environment before starting Compose. `docker compose down` preserves the volume; `docker compose down -v` removes it and the saved state.
 
 To run an image from GitHub Container Registry instead:
@@ -49,12 +57,15 @@ The GitHub Actions workflow for `Satont/twitch-mock` runs checks on pull request
 
 | Variable        | Default                     | Purpose                                                                                     |
 | --------------- | --------------------------- | ------------------------------------------------------------------------------------------- |
-| `HTTP_ADDR`     | `:7777`                     | OAuth and Helix listen address; health endpoint is `GET /health`.                           |
+| `PORT`          | `7777`                      | OAuth and Helix port; health endpoint is `GET /health`.                                     |
+| `HTTP_ADDR`     | unset                       | Full OAuth and Helix listen address; takes precedence over `PORT`.                          |
 | `WS_ADDR`       | `:8081`                     | EventSub WebSocket listen address; path `/ws`.                                              |
 | `ADMIN_ADDR`    | `:3333`                     | Control panel and admin API listen address.                                                 |
 | `SITE_BASE_URL` | `http://localhost:3005`     | Twir site base URL for the mock OAuth redirect.                                             |
 | `STORAGE`       | `memory`                    | `memory` for ephemeral state or `sqlite` for persistent state.                              |
 | `SQLITE_PATH`   | `./data/twitch-mock.sqlite` | Path to the SQLite database when `STORAGE=sqlite`; Compose uses `/data/twitch-mock.sqlite`. |
+
+An explicit `start({ httpAddr })` option takes precedence over `HTTP_ADDR`; `HTTP_ADDR` takes precedence over `PORT`.
 
 For SQLite, ensure the database's parent directory is writable and persist the **directory**, not just the database file: SQLite may create adjacent journal files. Live WebSocket and SSE connections are not persisted and must reconnect after a restart.
 

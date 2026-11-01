@@ -30,7 +30,7 @@ export function start(options: Options = {}) {
 
   try {
     const http = Bun.serve({
-      ...address(options.httpAddr ?? process.env.HTTP_ADDR ?? ':7777'),
+      ...address(options.httpAddr ?? (process.env.HTTP_ADDR || process.env.PORT || '7777')),
       fetch: (request) =>
         api(
           core,
